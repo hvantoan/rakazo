@@ -25,7 +25,6 @@ import {
   watchScreenAuthorization,
 } from "./src/screen-proxy.js";
 
-const webPort = Number(process.env.WEB_PORT ?? 5173);
 const DESKTOP_STACK_PROBE_PATH = "/.well-known/rakazo-desktop-stack";
 const DESKTOP_STACK_TOKEN_HEADER = "x-rakazo-desktop-stack-token";
 const screenLog = createServiceLogger({ service: "rakazo-web" });
@@ -400,6 +399,7 @@ Object.defineProperty(window, "localStorage", {
 export default defineConfig(({ mode }) => {
   const rootEnv = loadEnv(mode, path.resolve(import.meta.dirname, "../.."), "");
   const api = process.env.API_PROXY_TARGET ?? rootEnv.API_PROXY_TARGET ?? "http://127.0.0.1:3100";
+  const webPort = Number(process.env.WEB_PORT ?? rootEnv.WEB_PORT ?? 5173);
   const previewHost = process.env.RAKAZO_HOST ?? rootEnv.RAKAZO_HOST ?? "localhost";
   const allowedHosts = [
     previewHost,
@@ -464,7 +464,7 @@ export default defineConfig(({ mode }) => {
     },
     preview: {
       host: "0.0.0.0",
-      port: Number(process.env.WEB_PORT ?? 5173),
+      port: webPort,
       allowedHosts,
       proxy: {
         "/api": { target: api, changeOrigin: true },
