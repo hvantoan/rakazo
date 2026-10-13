@@ -28,7 +28,7 @@
       "cache": false,
       "env": ["PUBLIC_POSTHOG_HOST", "PUBLIC_POSTHOG_KEY"],
       "persistent": true,
-      "passThroughEnv": ["RAKAZO_HOST", "RAKAZO_DEV_HOST", "RAKAZO_ALLOWED_HOSTS"]
+      "passThroughEnv": ["AAS_HOST", "AAS_DEV_HOST", "AAS_ALLOWED_HOSTS"]
     }
   }
 }

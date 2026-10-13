@@ -1,7 +1,7 @@
-import { computerSupportsTerminal, computerSupportsUpdate } from "@rakazo/adapters";
-import type { ComputerStatus } from "@rakazo/contracts";
-import { ACTIVE_RUN_STATUSES, computerScreenSize } from "@rakazo/core";
-import type { PrismaClient } from "@rakazo/db";
+import { computerSupportsTerminal, computerSupportsUpdate } from "@aas/adapters";
+import type { ComputerStatus } from "@aas/contracts";
+import { ACTIVE_RUN_STATUSES, computerScreenSize } from "@aas/core";
+import type { PrismaClient } from "@aas/db";
 
 /** Mirrors computer.takeover: an execution lease blocks user control unless a takeover is pending. */
 export function executionBlocksUserTakeover(input: {

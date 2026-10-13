@@ -1,6 +1,6 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
-contextBridge.exposeInMainWorld("rakazoSetup", {
+contextBridge.exposeInMainWorld("aasSetup", {
   platform: process.platform,
   state: () => ipcRenderer.invoke("desktop.setup.state"),
   test: (url) => ipcRenderer.invoke("desktop.setup.test", url),

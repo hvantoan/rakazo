@@ -1,8 +1,8 @@
 import { MenuView } from "@expo/ui/community/menu";
-import type { RunActivityRow, SearchHit, SpaceBot, SpaceGroup } from "@rakazo/contracts";
-import { normalizeCreateBotProfile } from "@rakazo/contracts";
-import { ACTIVE_RUN_STATUSES } from "@rakazo/core";
-import { botColors } from "@rakazo/ui-tokens";
+import type { RunActivityRow, SearchHit, SpaceBot, SpaceGroup } from "@aas/contracts";
+import { normalizeCreateBotProfile } from "@aas/contracts";
+import { ACTIVE_RUN_STATUSES } from "@aas/core";
+import { botColors } from "@aas/ui-tokens";
 import { Redirect, useFocusEffect, useNavigation, useRouter } from "expo-router";
 import type { ReactNode } from "react";
 import {

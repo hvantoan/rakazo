@@ -1,5 +1,5 @@
-import type { AgentRunRequest } from "@rakazo/adapter-kit";
-import { PiAgentRuntime } from "@rakazo/adapters";
+import type { AgentRunRequest } from "@aas/adapter-kit";
+import { PiAgentRuntime } from "@aas/adapters";
 import { describe, expect, it } from "vitest";
 import { startModelEmulator } from "./model-emulator.js";
 

@@ -17,7 +17,7 @@ export function LandingBotAvatar({
   size?: number;
   className?: string;
 }) {
-  const src = AVATAR_BY_COLOR[color.toLowerCase()] ?? "/brand/rakazo-mark.png";
+  const src = AVATAR_BY_COLOR[color.toLowerCase()] ?? "/brand/aas-mark.png";
 
   return (
     <img

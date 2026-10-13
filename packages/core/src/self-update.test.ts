@@ -18,22 +18,22 @@ import {
 describe("normalizeRepoUrl", () => {
   it("accepts the official repository and https forks", () => {
     expect(normalizeRepoUrl(OFFICIAL_REPO_URL)).toEqual({
-      url: "https://github.com/elie222/rakazo",
+      url: "https://github.com/elie222/aas",
     });
-    expect(normalizeRepoUrl("  https://github.com/me/rakazo.git/  ")).toEqual({
-      url: "https://github.com/me/rakazo.git",
+    expect(normalizeRepoUrl("  https://github.com/me/aas.git/  ")).toEqual({
+      url: "https://github.com/me/aas.git",
     });
-    expect(normalizeRepoUrl("https://git.example.com:8443/team/rakazo.git")).toEqual({
-      url: "https://git.example.com:8443/team/rakazo.git",
+    expect(normalizeRepoUrl("https://git.example.com:8443/team/aas.git")).toEqual({
+      url: "https://git.example.com:8443/team/aas.git",
     });
   });
 
   it("accepts ssh remotes in both spellings", () => {
-    expect(normalizeRepoUrl("git@github.com:me/rakazo.git")).toEqual({
-      url: "git@github.com:me/rakazo.git",
+    expect(normalizeRepoUrl("git@github.com:me/aas.git")).toEqual({
+      url: "git@github.com:me/aas.git",
     });
-    expect(normalizeRepoUrl("ssh://git@github.com/me/rakazo.git")).toEqual({
-      url: "ssh://git@github.com/me/rakazo.git",
+    expect(normalizeRepoUrl("ssh://git@github.com/me/aas.git")).toEqual({
+      url: "ssh://git@github.com/me/aas.git",
     });
   });
 
@@ -41,46 +41,46 @@ describe("normalizeRepoUrl", () => {
     for (const input of [
       "",
       "   ",
-      "http://github.com/me/rakazo",
-      "git://github.com/me/rakazo",
+      "http://github.com/me/aas",
+      "git://github.com/me/aas",
       "file:///etc/passwd",
-      "/srv/rakazo",
+      "/srv/aas",
       "https://github.com",
       "https://github.com/onlyone",
       "https://github.com/me/../../etc",
-      "https://user:secret@github.com/me/rakazo",
-      "https://token@github.com/me/rakazo",
-      "ssh://bad%0auser@github.com/me/rakazo",
-      "https://github.com/me/rakazo?x=1",
-      "https://github.com/me/rakazo#frag",
+      "https://user:secret@github.com/me/aas",
+      "https://token@github.com/me/aas",
+      "ssh://bad%0auser@github.com/me/aas",
+      "https://github.com/me/aas?x=1",
+      "https://github.com/me/aas#frag",
       "https://github.com/me/rak azo",
       "--upload-pack=touch /tmp/pwned",
       "-o ProxyCommand=id",
-      `https://github.com/me/rakazo${"x".repeat(400)}`,
+      `https://github.com/me/aas${"x".repeat(400)}`,
     ]) {
       expect(normalizeRepoUrl(input), input).toHaveProperty("error");
     }
   });
 
   it("rejects an embedded newline that could smuggle a second argument", () => {
-    expect(normalizeRepoUrl("https://github.com/me/rakazo\n--exec=id")).toHaveProperty("error");
+    expect(normalizeRepoUrl("https://github.com/me/aas\n--exec=id")).toHaveProperty("error");
   });
 });
 
 describe("repoIdentity", () => {
   it("treats every spelling of the same remote as one repository", () => {
-    const identity = "github.com/elie222/rakazo";
-    expect(repoIdentity("https://github.com/elie222/rakazo")).toBe(identity);
-    expect(repoIdentity("https://github.com/elie222/rakazo.git")).toBe(identity);
-    expect(repoIdentity("git@github.com:elie222/rakazo.git")).toBe(identity);
-    expect(repoIdentity("ssh://git@github.com/Elie222/Rakazo")).toBe(identity);
+    const identity = "github.com/elie222/aas";
+    expect(repoIdentity("https://github.com/elie222/aas")).toBe(identity);
+    expect(repoIdentity("https://github.com/elie222/aas.git")).toBe(identity);
+    expect(repoIdentity("git@github.com:elie222/aas.git")).toBe(identity);
+    expect(repoIdentity("ssh://git@github.com/Elie222/Aas")).toBe(identity);
     expect(repoIdentity("not a url")).toBeNull();
   });
 
   it("only calls the real upstream official", () => {
-    expect(isOfficialRepoUrl("git@github.com:elie222/rakazo.git")).toBe(true);
-    expect(isOfficialRepoUrl("https://github.com/attacker/rakazo")).toBe(false);
-    expect(isOfficialRepoUrl("https://githubb.com/elie222/rakazo")).toBe(false);
+    expect(isOfficialRepoUrl("git@github.com:elie222/aas.git")).toBe(true);
+    expect(isOfficialRepoUrl("https://github.com/attacker/aas")).toBe(false);
+    expect(isOfficialRepoUrl("https://githubb.com/elie222/aas")).toBe(false);
   });
 });
 
@@ -146,7 +146,7 @@ describe("updateSteps", () => {
 
   it("passes every value as its own argument so nothing reaches a shell", () => {
     const steps = updateSteps({
-      remoteUrl: "git@github.com:me/rakazo.git",
+      remoteUrl: "git@github.com:me/aas.git",
       branch: "release/1.2",
       targetCommit: "2".repeat(40),
       repointRemote: true,
@@ -155,7 +155,7 @@ describe("updateSteps", () => {
       id: "remote",
       label: "Point the checkout at the chosen repository",
       command: "git",
-      args: ["remote", "set-url", "origin", "git@github.com:me/rakazo.git"],
+      args: ["remote", "set-url", "origin", "git@github.com:me/aas.git"],
     });
     expect(steps.find((step) => step.id === "merge")?.args).toEqual([
       "merge",

@@ -16,7 +16,7 @@ vi.mock("@lingui/react/macro", () => ({
   }),
   Trans: ({ children }: { children: ReactNode }) => children,
 }));
-vi.mock("@rakazo/ui-web", () => ({
+vi.mock("@aas/ui-web", () => ({
   Button: ({
     children,
     variant,
@@ -55,7 +55,7 @@ afterEach(async () => {
   await act(async () => root.unmount());
   host.remove();
   vi.restoreAllMocks();
-  delete window.rakazoDesktop;
+  delete window.aasDesktop;
 });
 async function render(mode: "in" | "up" | "forgot" = "in") {
   await act(async () =>
@@ -124,7 +124,7 @@ it("hides SSO in password recovery", async () => {
 
 it("selects a non-redirecting SSO request on desktop", async () => {
   vi.spyOn(window, "open").mockReturnValue({ close: vi.fn() } as unknown as Window);
-  window.rakazoDesktop = {} as NonNullable<Window["rakazoDesktop"]>;
+  window.aasDesktop = {} as NonNullable<Window["aasDesktop"]>;
   vi.mocked(fetchAuthCapabilities).mockResolvedValue(capabilities);
   vi.mocked(authClient.signIn.social).mockResolvedValue({
     data: null,

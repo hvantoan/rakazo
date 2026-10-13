@@ -1,6 +1,6 @@
 @import "tw-animate-css";
 @import "./shadcn.css";
-@import "@rakazo/ui-tokens/css";
+@import "@aas/ui-tokens/css";
 
 @source "./**/*.{ts,tsx}";
 
@@ -56,7 +56,7 @@
   }
 }
 
-@keyframes rakazo-avatar-spin {
+@keyframes aas-avatar-spin {
   0% {
     transform: rotate(0deg);
   }
@@ -65,21 +65,21 @@
   }
 }
 
-.rakazo-bot-avatar-ring {
-  animation: rakazo-avatar-spin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+.aas-bot-avatar-ring {
+  animation: aas-avatar-spin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   opacity: 0;
   transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.rakazo-bot-avatar {
+.aas-bot-avatar {
   transition: box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.rakazo-bot-avatar[data-working="true"] .rakazo-bot-avatar-ring {
+.aas-bot-avatar[data-working="true"] .aas-bot-avatar-ring {
   opacity: 1;
 }
 
-@keyframes rakazo-avatar-breathe {
+@keyframes aas-avatar-breathe {
   0%,
   100% {
     transform: scale(1);
@@ -91,142 +91,142 @@
   }
 }
 
-.rakazo-bot-avatar-picture {
+.aas-bot-avatar-picture {
   box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
 }
 
-.rakazo-bot-avatar-ring-working {
+.aas-bot-avatar-ring-working {
   filter: drop-shadow(0 0 4px var(--status-working));
 }
 
-.rakazo-bot-avatar[data-working="true"] .rakazo-bot-avatar-picture {
-  animation: rakazo-avatar-breathe 1.6s ease-in-out infinite;
+.aas-bot-avatar[data-working="true"] .aas-bot-avatar-picture {
+  animation: aas-avatar-breathe 1.6s ease-in-out infinite;
   box-shadow:
     0 0 0 2px var(--status-working),
     0 0 10px color-mix(in srgb, var(--status-working) 60%, transparent);
 }
 
-.rakazo-bot-avatar-eyes {
-  animation: var(--rakazo-eye-animation-name) var(--rakazo-eye-animation-duration)
-    var(--rakazo-eye-animation-easing) var(--rakazo-eye-animation-delay) infinite;
+.aas-bot-avatar-eyes {
+  animation: var(--aas-eye-animation-name) var(--aas-eye-animation-duration)
+    var(--aas-eye-animation-easing) var(--aas-eye-animation-delay) infinite;
   transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.rakazo-bot-avatar-eyes-working {
+.aas-bot-avatar-eyes-working {
   opacity: 0;
 }
 
-.rakazo-bot-avatar[data-working="true"] .rakazo-bot-avatar-eyes-idle {
+.aas-bot-avatar[data-working="true"] .aas-bot-avatar-eyes-idle {
   opacity: 0;
 }
 
-.rakazo-bot-avatar[data-working="true"] .rakazo-bot-avatar-eyes-working {
+.aas-bot-avatar[data-working="true"] .aas-bot-avatar-eyes-working {
   opacity: 1;
 }
 
-.rakazo-organic-avatar-body {
+.aas-organic-avatar-body {
   transform-origin: center;
   transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.rakazo-organic-avatar-body-idle {
-  animation: rakazo-organic-idle 5.6s ease-in-out infinite;
+.aas-organic-avatar-body-idle {
+  animation: aas-organic-idle 5.6s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar-body-working {
+.aas-organic-avatar-body-working {
   opacity: 0;
 }
 
-.rakazo-organic-avatar[data-working="true"] .rakazo-organic-avatar-body-idle {
+.aas-organic-avatar[data-working="true"] .aas-organic-avatar-body-idle {
   opacity: 0;
 }
 
-.rakazo-organic-avatar[data-working="true"] .rakazo-organic-avatar-body-working {
+.aas-organic-avatar[data-working="true"] .aas-organic-avatar-body-working {
   opacity: 1;
 }
 
-.rakazo-organic-avatar-eyes {
+.aas-organic-avatar-eyes {
   transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.rakazo-organic-avatar-eyes-working {
+.aas-organic-avatar-eyes-working {
   opacity: 0;
 }
 
-.rakazo-organic-avatar[data-working="true"] .rakazo-organic-avatar-eyes-idle {
+.aas-organic-avatar[data-working="true"] .aas-organic-avatar-eyes-idle {
   opacity: 0;
 }
 
-.rakazo-organic-avatar[data-working="true"] .rakazo-organic-avatar-eyes-working {
+.aas-organic-avatar[data-working="true"] .aas-organic-avatar-eyes-working {
   opacity: 1;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="0"] .rakazo-organic-avatar-eyes-idle {
-  animation: rakazo-eyes-idle-0 5.8s ease-in-out infinite;
+.aas-organic-avatar[data-eye-pattern="0"] .aas-organic-avatar-eyes-idle {
+  animation: aas-eyes-idle-0 5.8s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="1"] .rakazo-organic-avatar-eyes-idle {
-  animation: rakazo-eyes-idle-1 6.4s ease-in-out -1.7s infinite;
+.aas-organic-avatar[data-eye-pattern="1"] .aas-organic-avatar-eyes-idle {
+  animation: aas-eyes-idle-1 6.4s ease-in-out -1.7s infinite;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="2"] .rakazo-organic-avatar-eyes-idle {
-  animation: rakazo-eyes-idle-2 5.2s ease-in-out -3.1s infinite;
+.aas-organic-avatar[data-eye-pattern="2"] .aas-organic-avatar-eyes-idle {
+  animation: aas-eyes-idle-2 5.2s ease-in-out -3.1s infinite;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="3"] .rakazo-organic-avatar-eyes-idle {
-  animation: rakazo-eyes-idle-3 6.8s ease-in-out -2.3s infinite;
+.aas-organic-avatar[data-eye-pattern="3"] .aas-organic-avatar-eyes-idle {
+  animation: aas-eyes-idle-3 6.8s ease-in-out -2.3s infinite;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="0"] .rakazo-organic-avatar-eyes-working {
-  animation: rakazo-organic-eyes-loop-0 6.6s ease-in-out infinite;
+.aas-organic-avatar[data-eye-pattern="0"] .aas-organic-avatar-eyes-working {
+  animation: aas-organic-eyes-loop-0 6.6s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="1"] .rakazo-organic-avatar-eyes-working {
-  animation: rakazo-organic-eyes-loop-1 7.2s ease-in-out -1.4s infinite;
+.aas-organic-avatar[data-eye-pattern="1"] .aas-organic-avatar-eyes-working {
+  animation: aas-organic-eyes-loop-1 7.2s ease-in-out -1.4s infinite;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="2"] .rakazo-organic-avatar-eyes-working {
-  animation: rakazo-organic-eyes-loop-2 6.1s ease-in-out -3.2s infinite;
+.aas-organic-avatar[data-eye-pattern="2"] .aas-organic-avatar-eyes-working {
+  animation: aas-organic-eyes-loop-2 6.1s ease-in-out -3.2s infinite;
 }
 
-.rakazo-organic-avatar[data-eye-pattern="3"] .rakazo-organic-avatar-eyes-working {
-  animation: rakazo-organic-eyes-loop-3 7.8s ease-in-out -2.1s infinite;
+.aas-organic-avatar[data-eye-pattern="3"] .aas-organic-avatar-eyes-working {
+  animation: aas-organic-eyes-loop-3 7.8s ease-in-out -2.1s infinite;
 }
 
-/* Durations mirror @rakazo/core WORKING_AVATAR_DURATIONS_MS (avatar-motion). */
-.rakazo-organic-avatar[data-shape-family="0"] .rakazo-organic-avatar-body-working {
-  animation: rakazo-organic-float 1.8s ease-in-out infinite;
+/* Durations mirror @aas/core WORKING_AVATAR_DURATIONS_MS (avatar-motion). */
+.aas-organic-avatar[data-shape-family="0"] .aas-organic-avatar-body-working {
+  animation: aas-organic-float 1.8s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-shape-family="1"] .rakazo-organic-avatar-body-working {
-  animation: rakazo-organic-stretch 1.35s ease-in-out infinite;
+.aas-organic-avatar[data-shape-family="1"] .aas-organic-avatar-body-working {
+  animation: aas-organic-stretch 1.35s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-shape-family="2"] .rakazo-organic-avatar-body-working,
-.rakazo-organic-avatar[data-shape-family="8"] .rakazo-organic-avatar-body-working {
-  animation: rakazo-organic-sway 1.6s ease-in-out infinite;
+.aas-organic-avatar[data-shape-family="2"] .aas-organic-avatar-body-working,
+.aas-organic-avatar[data-shape-family="8"] .aas-organic-avatar-body-working {
+  animation: aas-organic-sway 1.6s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-shape-family="3"] .rakazo-organic-avatar-body-working,
-.rakazo-organic-avatar[data-shape-family="4"] .rakazo-organic-avatar-body-working {
-  animation: rakazo-organic-turn 2.4s ease-in-out infinite;
+.aas-organic-avatar[data-shape-family="3"] .aas-organic-avatar-body-working,
+.aas-organic-avatar[data-shape-family="4"] .aas-organic-avatar-body-working {
+  animation: aas-organic-turn 2.4s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-shape-family="5"] .rakazo-organic-avatar-body-working,
-.rakazo-organic-avatar[data-shape-family="9"] .rakazo-organic-avatar-body-working {
-  animation: rakazo-organic-squash 1.35s ease-in-out infinite;
+.aas-organic-avatar[data-shape-family="5"] .aas-organic-avatar-body-working,
+.aas-organic-avatar[data-shape-family="9"] .aas-organic-avatar-body-working {
+  animation: aas-organic-squash 1.35s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-shape-family="6"] .rakazo-organic-avatar-body-working {
-  animation: rakazo-organic-pulse 1.1s ease-in-out infinite;
+.aas-organic-avatar[data-shape-family="6"] .aas-organic-avatar-body-working {
+  animation: aas-organic-pulse 1.1s ease-in-out infinite;
 }
 
-.rakazo-organic-avatar[data-shape-family="7"] .rakazo-organic-avatar-body-working {
+.aas-organic-avatar[data-shape-family="7"] .aas-organic-avatar-body-working {
   transform-origin: center 20%;
-  animation: rakazo-organic-ring 1.35s ease-in-out infinite;
+  animation: aas-organic-ring 1.35s ease-in-out infinite;
 }
 
-@keyframes rakazo-organic-float {
+@keyframes aas-organic-float {
   0%,
   100% {
     transform: translateY(2px) scaleX(1.02);
@@ -236,7 +236,7 @@
   }
 }
 
-@keyframes rakazo-organic-idle {
+@keyframes aas-organic-idle {
   0%,
   100% {
     transform: translateY(1.2px) scale(1.012, 0.988);
@@ -246,7 +246,7 @@
   }
 }
 
-@keyframes rakazo-organic-stretch {
+@keyframes aas-organic-stretch {
   0%,
   100% {
     transform: translateY(2px) scale(1.04, 0.96);
@@ -256,7 +256,7 @@
   }
 }
 
-@keyframes rakazo-organic-sway {
+@keyframes aas-organic-sway {
   0%,
   100% {
     transform: rotate(-3deg) translateX(-1px);
@@ -266,7 +266,7 @@
   }
 }
 
-@keyframes rakazo-organic-turn {
+@keyframes aas-organic-turn {
   0%,
   100% {
     transform: rotate(-4deg) scale(0.98);
@@ -276,7 +276,7 @@
   }
 }
 
-@keyframes rakazo-organic-squash {
+@keyframes aas-organic-squash {
   0%,
   100% {
     transform: scale(1.04, 0.96);
@@ -286,7 +286,7 @@
   }
 }
 
-@keyframes rakazo-organic-pulse {
+@keyframes aas-organic-pulse {
   0%,
   100% {
     transform: scale(0.96);
@@ -296,7 +296,7 @@
   }
 }
 
-@keyframes rakazo-organic-ring {
+@keyframes aas-organic-ring {
   0%,
   100% {
     transform: rotate(-4deg);
@@ -309,7 +309,7 @@
   }
 }
 
-@keyframes rakazo-organic-eyes-loop-0 {
+@keyframes aas-organic-eyes-loop-0 {
   0%,
   100% {
     transform: translate(-9%, 1%) scaleY(0.94);
@@ -337,7 +337,7 @@
   }
 }
 
-@keyframes rakazo-organic-eyes-loop-1 {
+@keyframes aas-organic-eyes-loop-1 {
   0%,
   100% {
     transform: translate(0, -8%) scale(1.06);
@@ -362,7 +362,7 @@
   }
 }
 
-@keyframes rakazo-organic-eyes-loop-2 {
+@keyframes aas-organic-eyes-loop-2 {
   0%,
   100% {
     transform: scale(0.9, 1.08);
@@ -387,7 +387,7 @@
   }
 }
 
-@keyframes rakazo-organic-eyes-loop-3 {
+@keyframes aas-organic-eyes-loop-3 {
   0%,
   100% {
     transform: translateY(7%) scaleY(0.9);
@@ -412,7 +412,7 @@
   }
 }
 
-@keyframes rakazo-eyes-idle-0 {
+@keyframes aas-eyes-idle-0 {
   0%,
   32%,
   100% {
@@ -440,7 +440,7 @@
   }
 }
 
-@keyframes rakazo-eyes-idle-1 {
+@keyframes aas-eyes-idle-1 {
   0%,
   25%,
   100% {
@@ -468,7 +468,7 @@
   }
 }
 
-@keyframes rakazo-eyes-idle-2 {
+@keyframes aas-eyes-idle-2 {
   0%,
   28%,
   100% {
@@ -496,7 +496,7 @@
   }
 }
 
-@keyframes rakazo-eyes-idle-3 {
+@keyframes aas-eyes-idle-3 {
   0%,
   24%,
   100% {
@@ -524,7 +524,7 @@
   }
 }
 
-@keyframes rakazo-eyes-working {
+@keyframes aas-eyes-working {
   0% {
     transform: translate(-4px, 0) scale(0.92, 0.95);
   }
@@ -543,28 +543,28 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rakazo-bot-avatar-ring,
-  .rakazo-bot-avatar-eyes,
-  .rakazo-bot-avatar[data-working="true"] .rakazo-bot-avatar-picture {
+  .aas-bot-avatar-ring,
+  .aas-bot-avatar-eyes,
+  .aas-bot-avatar[data-working="true"] .aas-bot-avatar-picture {
     animation: none;
     transition: none;
   }
 
-  .rakazo-bot-avatar {
+  .aas-bot-avatar {
     transition: none;
   }
 
-  .rakazo-bot-avatar-visor {
+  .aas-bot-avatar-visor {
     transition: none;
   }
 
-  .rakazo-organic-avatar[data-shape-family] .rakazo-organic-avatar-body {
+  .aas-organic-avatar[data-shape-family] .aas-organic-avatar-body {
     animation: none;
-    d: var(--rakazo-organic-path);
+    d: var(--aas-organic-path);
     transition: none;
   }
 
-  .rakazo-organic-avatar[data-eye-pattern] .rakazo-organic-avatar-eyes {
+  .aas-organic-avatar[data-eye-pattern] .aas-organic-avatar-eyes {
     animation: none;
     transition: none;
   }

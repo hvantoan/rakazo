@@ -1,5 +1,5 @@
-import type { MessageBlock, ReplyPreview } from "@rakazo/contracts";
-import { ReplyPreviewSchema } from "@rakazo/contracts";
+import type { MessageBlock, ReplyPreview } from "@aas/contracts";
+import { ReplyPreviewSchema } from "@aas/contracts";
 
 type ReplyMetadata = {
   replyToMessageId?: string;

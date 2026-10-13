@@ -1,17 +1,17 @@
-import type { ComputerMode, ThinkingLevel } from "@rakazo/contracts";
+import type { ComputerMode, ThinkingLevel } from "@aas/contracts";
 import {
   BOT_COLORS,
   BOT_DESCRIPTION_MAX_LENGTH,
   BOT_NAME_MAX_LENGTH,
   BOT_TITLE_MAX_LENGTH,
   normalizeCreateBotProfile,
-} from "@rakazo/contracts";
+} from "@aas/contracts";
 import {
   connectedModelChoices,
   modelOptionKey,
   parseModelOptionKey,
   resolveSelectableModelId,
-} from "@rakazo/core";
+} from "@aas/core";
 import { Stack, useFocusEffect, useLocalSearchParams, useRouter } from "expo-router";
 import type { Voice } from "expo-speech";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";

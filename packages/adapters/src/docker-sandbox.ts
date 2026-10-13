@@ -16,9 +16,9 @@ import type {
   ScreenRequest,
   ScreenSession,
   TerminalRequest,
-} from "@rakazo/adapter-kit";
-import { boundedSandboxCommandTimeoutMs, resolveSupervisorToken } from "@rakazo/core";
-import { outgoingCorrelationHeaders } from "@rakazo/logging";
+} from "@aas/adapter-kit";
+import { boundedSandboxCommandTimeoutMs, resolveSupervisorToken } from "@aas/core";
+import { outgoingCorrelationHeaders } from "@aas/logging";
 import {
   boundedComputerActions,
   clampRounded,
@@ -133,12 +133,12 @@ export class DockerSandboxProvider implements SandboxProvider {
   private headers(context: AdapterContext, botId?: string) {
     return {
       authorization: `Bearer ${this.supervisorToken}`,
-      "x-rakazo-space-id": context.spaceId,
+      "x-aas-space-id": context.spaceId,
       ...outgoingCorrelationHeaders(),
-      ...(botId ? { "x-rakazo-bot-id": botId } : {}),
-      ...(context.botId ? { "x-rakazo-screen-id": context.botId } : {}),
-      ...(context.screenLeaseId ? { "x-rakazo-screen-lease-id": context.screenLeaseId } : {}),
-      ...(context.cancelRunWork ? { "x-rakazo-cancel-run-work": "1" } : {}),
+      ...(botId ? { "x-aas-bot-id": botId } : {}),
+      ...(context.botId ? { "x-aas-screen-id": context.botId } : {}),
+      ...(context.screenLeaseId ? { "x-aas-screen-lease-id": context.screenLeaseId } : {}),
+      ...(context.cancelRunWork ? { "x-aas-cancel-run-work": "1" } : {}),
     };
   }
 
@@ -679,9 +679,9 @@ function requestDeadline(timeoutMs: number, message: string) {
 }
 
 function dockerCwd(cwd: string | undefined) {
-  if (!cwd || cwd === "." || cwd === "/" || cwd === "/home/rakazo") return "/home/rakazo";
-  const relative = cwd.startsWith("/home/rakazo/")
-    ? cwd.slice("/home/rakazo/".length)
+  if (!cwd || cwd === "." || cwd === "/" || cwd === "/home/aas") return "/home/aas";
+  const relative = cwd.startsWith("/home/aas/")
+    ? cwd.slice("/home/aas/".length)
     : normalizeWorkspacePath(cwd);
-  return path.posix.join("/home/rakazo", relative);
+  return path.posix.join("/home/aas", relative);
 }

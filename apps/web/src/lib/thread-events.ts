@@ -7,8 +7,8 @@ import type {
   ThreadMessage,
   ThreadMessagePage,
   ThreadSnapshot,
-} from "@rakazo/contracts";
-import { RUN_TRIGGERS } from "@rakazo/contracts";
+} from "@aas/contracts";
+import { RUN_TRIGGERS } from "@aas/contracts";
 import {
   isActive,
   isBackgroundRunTrigger,
@@ -23,7 +23,7 @@ import {
   takeLiveMessage,
   updateCloudAgentMessages,
   upsertMessageById,
-} from "@rakazo/core";
+} from "@aas/core";
 
 const runTriggers = new Set<string>(RUN_TRIGGERS);
 

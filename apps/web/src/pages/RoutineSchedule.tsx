@@ -8,8 +8,8 @@ import {
   clampIntervalAmount,
   cronFromPreset,
   cronIntervalAmounts,
-} from "@rakazo/core";
-import { Input, NativeSelect, NativeSelectOption } from "@rakazo/ui-web";
+} from "@aas/core";
+import { Input, NativeSelect, NativeSelectOption } from "@aas/ui-web";
 import { Clock } from "lucide-react";
 
 const UNITS: CronUnit[] = ["minutes", "hours", "days"];

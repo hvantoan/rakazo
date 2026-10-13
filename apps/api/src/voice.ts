@@ -1,5 +1,5 @@
 import { ORPCError } from "@orpc/server";
-import type { AdapterContext, SecretStore } from "@rakazo/adapter-kit";
+import type { AdapterContext, SecretStore } from "@aas/adapter-kit";
 import {
   createVoiceProvider,
   isFishSpeechModelId,
@@ -9,9 +9,9 @@ import {
   MAX_TRANSCRIBE_BYTES,
   NoVoiceConfigured,
   voiceCatalogEntry,
-} from "@rakazo/adapters";
-import type { Actor, VoiceCredential, VoiceStatus } from "@rakazo/contracts";
-import { toUtterances } from "@rakazo/core";
+} from "@aas/adapters";
+import type { Actor, VoiceCredential, VoiceStatus } from "@aas/contracts";
+import { toUtterances } from "@aas/core";
 import {
   deleteUnreferencedCredentialSecret,
   findDefaultVoiceCredential,
@@ -21,8 +21,8 @@ import {
   Prisma,
   type PrismaClient,
   selectSpaceVoicePreference,
-} from "@rakazo/db";
-import { getLogger } from "@rakazo/logging";
+} from "@aas/db";
+import { getLogger } from "@aas/logging";
 import type { Context, Hono } from "hono";
 import { readBoundedBody } from "./http-body.js";
 import { withSerializableRetry } from "./serializable-retry.js";

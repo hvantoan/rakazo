@@ -1,5 +1,5 @@
-import type { RemoteImagesPreference } from "@rakazo/core";
-import { normalizeRemoteImagesPreference, REMOTE_IMAGES_STORAGE_KEY } from "@rakazo/core";
+import type { RemoteImagesPreference } from "@aas/core";
+import { normalizeRemoteImagesPreference, REMOTE_IMAGES_STORAGE_KEY } from "@aas/core";
 
 export type { RemoteImagesPreference };
 

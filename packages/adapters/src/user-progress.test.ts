@@ -1,5 +1,5 @@
-import type { MessageBlock } from "@rakazo/contracts";
-import { isToolActivityBlock } from "@rakazo/core";
+import type { MessageBlock } from "@aas/contracts";
+import { isToolActivityBlock } from "@aas/core";
 import { describe, expect, it } from "vitest";
 import {
   botMessageOutcomeFromMidTurn,

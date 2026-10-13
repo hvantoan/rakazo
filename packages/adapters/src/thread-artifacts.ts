@@ -5,21 +5,21 @@ import type {
   ArtifactStore,
   ComputerRef,
   SandboxProvider,
-} from "@rakazo/adapter-kit";
-import type { ComputerMode, MessageBlock } from "@rakazo/contracts";
+} from "@aas/adapter-kit";
+import type { ComputerMode, MessageBlock } from "@aas/contracts";
 import {
   ARTIFACT_DESCRIPTION_MAX_LENGTH,
   ARTIFACT_NAME_MAX_LENGTH,
   ATTACHMENT_MAX_BYTES,
-} from "@rakazo/contracts";
+} from "@aas/contracts";
 import {
   attachmentExtensionForMimeType,
   inferAttachmentMimeType,
   messageBlockForArtifact,
   validateAttachmentMimeType,
-} from "@rakazo/core";
-import type { PrismaClient } from "@rakazo/db";
-import { withResolvedArtifactVersion } from "@rakazo/db";
+} from "@aas/core";
+import type { PrismaClient } from "@aas/db";
+import { withResolvedArtifactVersion } from "@aas/db";
 import { resolveBotWorkspacePath } from "./computer-support.js";
 
 export type MaterializedThreadFile = {

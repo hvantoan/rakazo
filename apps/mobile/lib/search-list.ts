@@ -1,5 +1,5 @@
-import type { SearchHit } from "@rakazo/contracts";
-import { plainTextFromMarkdown } from "@rakazo/core";
+import type { SearchHit } from "@aas/contracts";
+import { plainTextFromMarkdown } from "@aas/core";
 
 /**
  * One row per hit. Link hits in the same message share a message id and differ

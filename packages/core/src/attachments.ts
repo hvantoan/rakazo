@@ -1,10 +1,10 @@
-import type { AttachmentMimeType, MessageBlock } from "@rakazo/contracts";
+import type { AttachmentMimeType, MessageBlock } from "@aas/contracts";
 import {
   ATTACHMENT_MAX_BASE64_LENGTH,
   ATTACHMENT_MAX_BYTES,
   isAllowedAttachmentMimeType,
   isAttachmentImageMimeType,
-} from "@rakazo/contracts";
+} from "@aas/contracts";
 
 export class AttachmentValidationError extends Error {
   constructor(message: string) {

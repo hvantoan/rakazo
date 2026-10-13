@@ -1,9 +1,9 @@
-import type { ComputerMode } from "@rakazo/contracts";
+import type { ComputerMode } from "@aas/contracts";
 import type { PrismaClient } from "./client.js";
 import { Prisma } from "./client.js";
 import { withTransactionRetry } from "./transaction-retry.js";
 
-export type { ComputerMode } from "@rakazo/contracts";
+export type { ComputerMode } from "@aas/contracts";
 
 export function parseComputerMode(scope: string): ComputerMode {
   if (scope === "team" || scope === "dedicated") return scope;

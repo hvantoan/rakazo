@@ -13,11 +13,11 @@
   "iconLibrary": "lucide",
   "rtl": false,
   "aliases": {
-    "components": "@rakazo/ui-web/components",
-    "utils": "@rakazo/ui-web/lib/utils",
-    "ui": "@rakazo/ui-web/components/ui",
-    "lib": "@rakazo/ui-web/lib",
-    "hooks": "@rakazo/ui-web/hooks"
+    "components": "@aas/ui-web/components",
+    "utils": "@aas/ui-web/lib/utils",
+    "ui": "@aas/ui-web/components/ui",
+    "lib": "@aas/ui-web/lib",
+    "hooks": "@aas/ui-web/hooks"
   },
   "menuColor": "default",
   "menuAccent": "subtle",

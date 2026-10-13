@@ -11,13 +11,13 @@ import type {
   RealtimeFanout,
   SandboxProvider,
   TransactionalEmailProvider,
-} from "@rakazo/adapter-kit";
+} from "@aas/adapter-kit";
 import type {
   ComposioProvider,
   ConnectorRegistry,
   DestinationEmulator,
   RemoteConnectorDependencies,
-} from "@rakazo/adapters";
+} from "@aas/adapters";
 import {
   applyMessagingOutboundStatus,
   ChatSdkMessagingSurface,
@@ -70,11 +70,11 @@ import {
   stripeBillingConfigFromEnv,
   toTeamChatInbound,
   withSecretPersistence,
-} from "@rakazo/adapters";
-import { createAuth, isBlockedAuthPath, loopbackTwinOrigins } from "@rakazo/auth";
-import type { Actor, AuthCapabilities } from "@rakazo/contracts";
-import { signupAllowlistBootUpdate, signupPolicyFromEnv } from "@rakazo/core";
-import type { Pool, PrismaClient } from "@rakazo/db";
+} from "@aas/adapters";
+import { createAuth, isBlockedAuthPath, loopbackTwinOrigins } from "@aas/auth";
+import type { Actor, AuthCapabilities } from "@aas/contracts";
+import { signupAllowlistBootUpdate, signupPolicyFromEnv } from "@aas/core";
+import type { Pool, PrismaClient } from "@aas/db";
 import {
   createBoardEvents,
   createDb,
@@ -85,17 +85,17 @@ import {
   provisionMessagingIdentity,
   pushSessionExpiresAt,
   requireMembership,
-} from "@rakazo/db";
-import type { Logger } from "@rakazo/logging";
+} from "@aas/db";
+import type { Logger } from "@aas/logging";
 import {
   createServiceLogger,
   enrichLogContext,
   getLogger,
   installLogger,
   SERVICE_NAMES,
-} from "@rakazo/logging";
-import { requestLogging } from "@rakazo/logging/hono";
-import { MarkdownMemoryStore } from "@rakazo/memory";
+} from "@aas/logging";
+import { requestLogging } from "@aas/logging/hono";
+import { MarkdownMemoryStore } from "@aas/memory";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { createBillingService } from "./billing.js";
@@ -130,7 +130,7 @@ import { mountWebhookHttpRoutes } from "./webhook.js";
  * The loopback entries are the Expo web dev server.
  */
 export const MOBILE_AUTH_ORIGINS = [
-  "rakazo://",
+  "aas://",
   "http://localhost:8081",
   "http://127.0.0.1:8081",
   "http://localhost:19006",
@@ -192,7 +192,7 @@ export async function createApp(
     ? { prisma: prismaOverride, pool: undefined }
     : createDb(env.databaseUrl, {
         poolMax: parsePositiveInteger(process.env.DB_POOL_MAX, 4),
-        applicationName: "rakazo-api",
+        applicationName: "aas-api",
       });
   let { prisma } = created;
   const realtime =
@@ -261,7 +261,7 @@ export async function createApp(
   if (!inMemoryJobs && !created.pool) {
     ownedJobPool = createPool(env.databaseUrl, {
       poolMax: parsePositiveInteger(process.env.DB_POOL_MAX, 4),
-      applicationName: "rakazo-api-jobs",
+      applicationName: "aas-api-jobs",
     });
   }
   const jobPool = created.pool ?? ownedJobPool;
@@ -635,7 +635,7 @@ export async function createApp(
     const session = await auth.api.getSession({ headers: sessionHeaders(request) });
     if (!session?.user) return null;
     const actor = await actorFromMembership(
-      requireMembership(prisma, session.user.id, request.headers.get("x-rakazo-space-id")),
+      requireMembership(prisma, session.user.id, request.headers.get("x-aas-space-id")),
     );
     return actor && { actor, sessionId: session.session.id };
   };
@@ -1019,7 +1019,7 @@ export function isTrustedOrigin(
   env: Pick<AppEnv, "webOrigin" | "apiUrl" | "authUrl">,
 ) {
   if (!origin) return true;
-  if (origin.startsWith("rakazo://")) return true;
+  if (origin.startsWith("aas://")) return true;
   const allowed = new Set(
     [env.webOrigin, env.apiUrl, env.authUrl, ...MOBILE_AUTH_ORIGINS].flatMap(originVariants),
   );
@@ -1031,7 +1031,7 @@ function isLoopbackHost(host: string): boolean {
 }
 
 function originVariants(origin: string): string[] {
-  if (!origin || origin === "rakazo://") return [];
+  if (!origin || origin === "aas://") return [];
   const variants = [origin, ...loopbackTwinOrigins(origin)];
   try {
     const url = new URL(origin);

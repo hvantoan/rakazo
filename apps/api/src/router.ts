@@ -10,7 +10,7 @@ import type {
   SandboxProvider,
   SecretStore,
   UsageOperationKind,
-} from "@rakazo/adapter-kit";
+} from "@aas/adapter-kit";
 import {
   computerControlExpireJobKey,
   messagingDeliverJob,
@@ -19,7 +19,7 @@ import {
   runContinueJob,
   runJobKey,
   SecretStoreUnavailableError,
-} from "@rakazo/adapter-kit";
+} from "@aas/adapter-kit";
 import type {
   CloudAgentConnection,
   CodexLiveCatalog,
@@ -33,7 +33,7 @@ import type {
   PiOAuthLogins,
   RemoteConnectorDependencies,
   TicketChangeNotifier,
-} from "@rakazo/adapters";
+} from "@aas/adapters";
 import {
   acquireComputerExecutionLease,
   applyCodexLiveCatalog,
@@ -121,8 +121,8 @@ import {
   validateModelAuthAvailability,
   validateStoredModelAuth,
   verifyMcpInstall,
-} from "@rakazo/adapters";
-import type { Auth } from "@rakazo/auth";
+} from "@aas/adapters";
+import type { Auth } from "@aas/auth";
 import type {
   Actor,
   BoardEvent,
@@ -136,7 +136,7 @@ import type {
   ProductEvent,
   Routine,
   SpaceNavigation,
-} from "@rakazo/contracts";
+} from "@aas/contracts";
 import {
   ATTACHMENT_MAX_BYTES,
   appContract,
@@ -147,7 +147,7 @@ import {
   OPENAI_COMPATIBLE_PROVIDER_ID,
   parseTicketRef,
   usableModelId,
-} from "@rakazo/contracts";
+} from "@aas/contracts";
 import {
   ACTIVE_RUN_STATUSES,
   AttachmentValidationError,
@@ -159,8 +159,8 @@ import {
   hasMixedOneShotSchedule,
   isOneShotRoutineCrons,
   nextCronDateAcrossStrict,
-} from "@rakazo/core";
-import type { BoardEvents, Board as BoardRow, PrismaClient, ThreadEvents } from "@rakazo/db";
+} from "@aas/core";
+import type { BoardEvents, Board as BoardRow, PrismaClient, ThreadEvents } from "@aas/db";
 import {
   appendEventInTransaction,
   BotSectionNameConflictError,
@@ -213,8 +213,8 @@ import {
   toTicketCommentDto,
   toTicketDto,
   touchGroupUpdatedAt,
-} from "@rakazo/db";
-import { getLogger } from "@rakazo/logging";
+} from "@aas/db";
+import { getLogger } from "@aas/logging";
 import { deleteAgentSecret, listAgentSecrets, putAgentSecret } from "./agent-secrets.js";
 import { createAgentSkillsService } from "./agent-skills.js";
 import { aiConsentStatus, allowAiConsent } from "./ai-consent.js";

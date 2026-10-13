@@ -67,8 +67,8 @@ configureUnsentSends({
     const context = await captureApiRequestContext();
     if (generation !== currentSessionGeneration()) throw new Error("Session changed");
     const headers = { ...context.headers };
-    if (spaceId) headers["x-rakazo-space-id"] = spaceId;
-    else delete headers["x-rakazo-space-id"];
+    if (spaceId) headers["x-aas-space-id"] = spaceId;
+    else delete headers["x-aas-space-id"];
     return rpc<T>(proc, body, { ...options, requestContext: { ...context, headers } });
   },
   serverReachable: isServerReachable,

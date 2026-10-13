@@ -1,7 +1,7 @@
 import { ORPCError } from "@orpc/server";
-import type { BillingPrice, BillingProvider } from "@rakazo/adapter-kit";
-import type { Actor, BillingStatus } from "@rakazo/contracts";
-import type { PrismaClient } from "@rakazo/db";
+import type { BillingPrice, BillingProvider } from "@aas/adapter-kit";
+import type { Actor, BillingStatus } from "@aas/contracts";
+import type { PrismaClient } from "@aas/db";
 import {
   billingAccountForOrganization,
   createBillingAccount,
@@ -10,8 +10,8 @@ import {
   organizationSeatCount,
   ownedBillingAccounts,
   syncBillingSnapshot,
-} from "@rakazo/db";
-import { getLogger } from "@rakazo/logging";
+} from "@aas/db";
+import { getLogger } from "@aas/logging";
 
 export const TRIAL_DAYS = 7;
 const PRICE_CACHE_MS = 60 * 60 * 1000;

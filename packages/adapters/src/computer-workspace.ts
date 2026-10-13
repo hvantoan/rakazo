@@ -7,12 +7,12 @@ import type {
   ComputerRef,
   PortableFile,
   SandboxProvider,
-} from "@rakazo/adapter-kit";
-import type { ComputerMode } from "@rakazo/contracts";
-import { parseScreenLeaseId } from "@rakazo/core";
-import { browserProfilePathForScreen } from "@rakazo/core/node/desktop-runtime";
-import type { PrismaClient } from "@rakazo/db";
-import { getLogger } from "@rakazo/logging";
+} from "@aas/adapter-kit";
+import type { ComputerMode } from "@aas/contracts";
+import { parseScreenLeaseId } from "@aas/core";
+import { browserProfilePathForScreen } from "@aas/core/node/desktop-runtime";
+import type { PrismaClient } from "@aas/db";
+import { getLogger } from "@aas/logging";
 import { normalizeWorkspacePath, teamBotWorkspaceDirectory } from "./computer-support.js";
 import { LocalAgentHomeStore } from "./home.js";
 
@@ -283,7 +283,7 @@ export async function checkpointComputerWorkspace(
   if (computer.kind === "docker" && home instanceof LocalAgentHomeStore) {
     return home.revise(homeKey);
   }
-  const staging = await mkdtemp(path.join(tmpdir(), "rakazo-workspace-"));
+  const staging = await mkdtemp(path.join(tmpdir(), "aas-workspace-"));
   try {
     for await (const file of sandbox.exportWorkspace(computer, context)) {
       await writePortableFile(staging, file);

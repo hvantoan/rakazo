@@ -1,10 +1,10 @@
 import { t } from "@lingui/core/macro";
 import { Trans, useLingui } from "@lingui/react/macro";
-import { ChatMarkdown } from "@rakazo/chat-ui/web";
-import type { ThreadMessage } from "@rakazo/contracts";
-import { commandVariableName } from "@rakazo/contracts";
-import { isApprovalAskBlock, isSecretAskBlock, selectedAskActionLabel } from "@rakazo/core";
-import { Button, Input } from "@rakazo/ui-web";
+import { ChatMarkdown } from "@aas/chat-ui/web";
+import type { ThreadMessage } from "@aas/contracts";
+import { commandVariableName } from "@aas/contracts";
+import { isApprovalAskBlock, isSecretAskBlock, selectedAskActionLabel } from "@aas/core";
+import { Button, Input } from "@aas/ui-web";
 import { useState } from "react";
 import { errorText } from "../lib/user-error";
 

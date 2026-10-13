@@ -1,6 +1,6 @@
-import type { ArtifactStore } from "@rakazo/adapter-kit";
-import type { Actor } from "@rakazo/contracts";
-import type { PrismaClient } from "@rakazo/db";
+import type { ArtifactStore } from "@aas/adapter-kit";
+import type { Actor } from "@aas/contracts";
+import type { PrismaClient } from "@aas/db";
 import { describe, expect, it, vi } from "vitest";
 import { ArtifactListCursorError, deleteArtifactFamily, listSpaceArtifacts } from "./artifacts.js";
 

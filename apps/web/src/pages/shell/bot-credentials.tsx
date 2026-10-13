@@ -1,12 +1,12 @@
 import { Trans, useLingui } from "@lingui/react/macro";
-import type { BotSecretMetadata } from "@rakazo/contracts";
+import type { BotSecretMetadata } from "@aas/contracts";
 import {
   BotSecretName,
   commandVariableName,
   commandVariableProblem,
   encodeLoginSecret,
-} from "@rakazo/contracts";
-import { Button, Input, NativeSelect, NativeSelectOption } from "@rakazo/ui-web";
+} from "@aas/contracts";
+import { Button, Input, NativeSelect, NativeSelectOption } from "@aas/ui-web";
 import { useEffect, useId, useState } from "react";
 import { rpc } from "../../lib/rpc";
 import { errorText } from "../../lib/user-error";

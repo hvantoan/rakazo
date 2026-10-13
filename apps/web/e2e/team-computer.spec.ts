@@ -17,7 +17,7 @@ test("Team Computer gives bots a home folder plus shared space while Private sta
   const sharedMarker = `shared-${stamp}`;
   const privateMarker = `private-${stamp}`;
 
-  await signup(page, `team-computer-${stamp}@rakazo.test`, "password12", "Team Computer");
+  await signup(page, `team-computer-${stamp}@aas.test`, "password12", "Team Computer");
   await completeOnboarding(page);
   const chiefId = activeBotId(page);
 
@@ -85,7 +85,7 @@ test("user control leaves another Team bot's screen available", async ({ page },
   const stamp = Date.now();
   const marker = `after-release-${stamp}`;
 
-  await signup(page, `team-control-${stamp}@rakazo.test`, "password12", "Team Control");
+  await signup(page, `team-control-${stamp}@aas.test`, "password12", "Team Control");
   await completeOnboarding(page);
   const chiefId = activeBotId(page);
   const workerId = await createBot(page, "Worker", "team");
@@ -133,7 +133,7 @@ test("user control leaves another Team bot's screen available", async ({ page },
 test("opening and releasing the computer keep a view-only stream with maintenance available", async ({
   page,
 }, testInfo) => {
-  await signup(page, `view-only-${Date.now()}@rakazo.test`, "password12", "Computer");
+  await signup(page, `view-only-${Date.now()}@aas.test`, "password12", "Computer");
   await completeOnboarding(page);
   let takeovers = 0;
   page.on("request", (request) => {
@@ -179,7 +179,7 @@ test("opening and releasing the computer keep a view-only stream with maintenanc
 });
 
 test("a failed control release keeps the computer open for retry", async ({ page }, testInfo) => {
-  await signup(page, `team-release-${Date.now()}@rakazo.test`, "password12", "Team Release");
+  await signup(page, `team-release-${Date.now()}@aas.test`, "password12", "Team Release");
   await completeOnboarding(page);
   await page.getByTitle("Agent computer").click();
   await page.getByTestId("computer-preview").hover();
@@ -206,7 +206,7 @@ test("an active Team bot must be stopped before user takeover", async ({ page },
 
   await signup(
     page,
-    `active-team-control-${stamp}@rakazo.test`,
+    `active-team-control-${stamp}@aas.test`,
     "password12",
     "Active Team Control",
   );

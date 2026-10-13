@@ -1,6 +1,6 @@
-import type { Actor, Bot, BotSection, MessageBlock, SpaceBot } from "@rakazo/contracts";
-import { BOT_COLORS } from "@rakazo/contracts";
-import { BACKGROUND_RUN_TRIGGERS, isBackgroundRunTrigger, userVisibleMessages } from "@rakazo/core";
+import type { Actor, Bot, BotSection, MessageBlock, SpaceBot } from "@aas/contracts";
+import { BOT_COLORS } from "@aas/contracts";
+import { BACKGROUND_RUN_TRIGGERS, isBackgroundRunTrigger, userVisibleMessages } from "@aas/core";
 import type { PrismaClient } from "./client.js";
 import type { ComputerMode } from "./computers.js";
 import { ensureComputerRecord, parseComputerMode } from "./computers.js";

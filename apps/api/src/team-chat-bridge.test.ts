@@ -1,6 +1,6 @@
-import type { TeamChatInboundMessage, TeamChatSendRequest } from "@rakazo/adapter-kit";
-import type { MessageBlock } from "@rakazo/contracts";
-import type { PrismaClient } from "@rakazo/db";
+import type { TeamChatInboundMessage, TeamChatSendRequest } from "@aas/adapter-kit";
+import type { MessageBlock } from "@aas/contracts";
+import type { PrismaClient } from "@aas/db";
 import { describe, expect, it, vi } from "vitest";
 import {
   TeamChatBridge,

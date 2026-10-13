@@ -6,8 +6,8 @@ import type {
   AdapterContext,
   NotificationMessage,
   NotificationProvider,
-} from "@rakazo/adapter-kit";
-import { getLogger } from "@rakazo/logging";
+} from "@aas/adapter-kit";
+import { getLogger } from "@aas/logging";
 import koffi from "koffi";
 import { combineSignals } from "./connector-safety.js";
 import { readBodyCapped, withAbort } from "./web-ssrf.js";

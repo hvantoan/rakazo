@@ -36,7 +36,7 @@ type NativeNotifications = {
 
 const nativeNotifications =
   Platform.OS === "android"
-    ? requireNativeModule<NativeNotifications>("RakazoNotifications")
+    ? requireNativeModule<NativeNotifications>("AasNotifications")
     : null;
 
 export type NotificationThreadTarget = { botId?: string; threadId?: string };
@@ -53,10 +53,10 @@ export function notificationTargetsThread(
   target: NotificationThreadTarget | null,
 ): boolean {
   if (!data || !target) return false;
-  const dataThreadId = data.threadId ?? data["rakazo.threadId"];
+  const dataThreadId = data.threadId ?? data["aas.threadId"];
   if (target.threadId && dataThreadId) return dataThreadId === target.threadId;
   return Boolean(
-    target.botId && (data.botId === target.botId || data["rakazo.botId"] === target.botId),
+    target.botId && (data.botId === target.botId || data["aas.botId"] === target.botId),
   );
 }
 

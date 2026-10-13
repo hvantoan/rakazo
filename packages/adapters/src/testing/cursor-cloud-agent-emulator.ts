@@ -1,5 +1,5 @@
-import type { AdapterContext, CloudAgentSnapshot } from "@rakazo/adapter-kit";
-import { CloudAgentRequestRejected } from "@rakazo/adapter-kit";
+import type { AdapterContext, CloudAgentSnapshot } from "@aas/adapter-kit";
+import { CloudAgentRequestRejected } from "@aas/adapter-kit";
 import { EmulatorCloudAgentProvider } from "../cloud-agent-emulator.js";
 
 /** In-process Cursor v1 HTTP server substitute, including post-commit transport faults. */

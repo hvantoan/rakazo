@@ -5,22 +5,22 @@ import type {
   ModelCredentialFailedState,
   ModelCredentialRetireReason,
   SecretStore,
-} from "@rakazo/adapter-kit";
+} from "@aas/adapter-kit";
 import {
   formatCurrentTimeInstruction,
   matchesFailedOAuthSecret,
   resolveModelAuth,
   serializeModelSecret,
   toOAuthCredential,
-} from "@rakazo/adapters";
-import type { PrismaClient } from "@rakazo/db";
+} from "@aas/adapters";
+import type { PrismaClient } from "@aas/db";
 import {
   findDefaultModelCredential,
   findModelCredential,
   recordUsage,
   retireModelCredential,
-} from "@rakazo/db";
-import { getLogger } from "@rakazo/logging";
+} from "@aas/db";
+import { getLogger } from "@aas/logging";
 
 const MAX_RULES_CHARS = 4_000;
 const MAX_MESSAGES = 20;

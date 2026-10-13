@@ -1,4 +1,4 @@
-import { Button } from "@rakazo/ui-web";
+import { Button } from "@aas/ui-web";
 import type { CSSProperties, PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {

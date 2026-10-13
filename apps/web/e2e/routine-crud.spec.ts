@@ -1,6 +1,6 @@
 import type { Page } from "@playwright/test";
 import { expect, test } from "@playwright/test";
-import type { Bot, Routine } from "@rakazo/contracts";
+import type { Bot, Routine } from "@aas/contracts";
 import { activeBotId, captureScreenshot, completeOnboarding, rpc, signup } from "./helpers";
 
 async function addScheduleTrigger(page: Page, freq: string) {
@@ -22,7 +22,7 @@ async function saveAndReturn(page: Page, procedure: "routines/create" | "routine
 
 test("routine active switch keeps its thumb inside the track", async ({ page }, testInfo) => {
   const stamp = Date.now();
-  await signup(page, `routine-toggle-${stamp}@rakazo.test`, "password12", "Routine Toggle");
+  await signup(page, `routine-toggle-${stamp}@aas.test`, "password12", "Routine Toggle");
   await completeOnboarding(page);
   await page.getByTitle("Agent computer").click();
   await page.getByRole("button", { name: "Create Routine" }).click();
@@ -66,7 +66,7 @@ test("routine editing updates in place, preserves timezone, and deletion persist
   page,
 }, testInfo) => {
   const stamp = Date.now();
-  await signup(page, `routine-crud-${stamp}@rakazo.test`, "password12", "Routine CRUD");
+  await signup(page, `routine-crud-${stamp}@aas.test`, "password12", "Routine CRUD");
   await completeOnboarding(page);
   const botId = activeBotId(page);
 
@@ -134,7 +134,7 @@ test("routine editing updates in place, preserves timezone, and deletion persist
 
 test("a routine runs on the bot's model until another is picked", async ({ page }, testInfo) => {
   const stamp = Date.now();
-  await signup(page, `routine-model-${stamp}@rakazo.test`, "password12", "Routine Model");
+  await signup(page, `routine-model-${stamp}@aas.test`, "password12", "Routine Model");
   await completeOnboarding(page);
   const botId = activeBotId(page);
 
@@ -192,7 +192,7 @@ test("a routine runs on the bot's model until another is picked", async ({ page 
 
 test("invalid advanced cron is rejected without creating a routine", async ({ page }, testInfo) => {
   const stamp = Date.now();
-  await signup(page, `routine-invalid-${stamp}@rakazo.test`, "password12", "Invalid Routine");
+  await signup(page, `routine-invalid-${stamp}@aas.test`, "password12", "Invalid Routine");
   await completeOnboarding(page);
   const botId = activeBotId(page);
 
@@ -213,7 +213,7 @@ test("a successful routine create is not reported as failed when refresh fails",
   page,
 }) => {
   const stamp = Date.now();
-  await signup(page, `routine-refresh-${stamp}@rakazo.test`, "password12", "Routine Refresh");
+  await signup(page, `routine-refresh-${stamp}@aas.test`, "password12", "Routine Refresh");
   await completeOnboarding(page);
   const botId = activeBotId(page);
 
@@ -251,7 +251,7 @@ test("switching bots while a routine save is pending does not reopen stale state
   page,
 }) => {
   const stamp = Date.now();
-  await signup(page, `routine-switch-${stamp}@rakazo.test`, "password12", "Routine Switch");
+  await signup(page, `routine-switch-${stamp}@aas.test`, "password12", "Routine Switch");
   await completeOnboarding(page);
   const firstBotId = activeBotId(page);
   const secondBot = await rpc<Bot>(page, "bots/create", {
@@ -382,7 +382,7 @@ function localSchedule(iso: string, timezone: string) {
 
 test("interval schedule only offers amounts the unit can run", async ({ page }, testInfo) => {
   const stamp = Date.now();
-  await signup(page, `routine-interval-${stamp}@rakazo.test`, "password12", "Interval Routine");
+  await signup(page, `routine-interval-${stamp}@aas.test`, "password12", "Interval Routine");
   await completeOnboarding(page);
 
   await page.getByTitle("Agent computer").click();

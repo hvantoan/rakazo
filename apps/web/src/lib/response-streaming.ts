@@ -1,9 +1,9 @@
-import type { ResponseStreamingPreference } from "@rakazo/core";
+import type { ResponseStreamingPreference } from "@aas/core";
 import {
   normalizeResponseStreamingPreference,
   RESPONSE_STREAMING_STORAGE_KEY,
   responseStreamingEnabled,
-} from "@rakazo/core";
+} from "@aas/core";
 
 export type { ResponseStreamingPreference };
 

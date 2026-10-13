@@ -5,8 +5,8 @@ import type {
   ConnectorProvider,
   ConnectorTool,
   SecretStore,
-} from "@rakazo/adapter-kit";
-import type { PrismaClient } from "@rakazo/db";
+} from "@aas/adapter-kit";
+import type { PrismaClient } from "@aas/db";
 import { z } from "zod";
 import {
   AuthSchema,

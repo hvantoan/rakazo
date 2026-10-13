@@ -1,6 +1,6 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
-contextBridge.exposeInMainWorld("rakazoDesktop", {
+contextBridge.exposeInMainWorld("aasDesktop", {
   platform: process.platform,
   localSettings: {
     request: (pathname, body) =>

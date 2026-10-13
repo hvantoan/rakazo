@@ -1,13 +1,13 @@
 import { Trans, useLingui } from "@lingui/react/macro";
-import { ChatMarkdown } from "@rakazo/chat-ui/web";
-import type { Bot, Ticket, TicketComment, TicketPriority, TicketStatus } from "@rakazo/contracts";
+import { ChatMarkdown } from "@aas/chat-ui/web";
+import type { Bot, Ticket, TicketComment, TicketPriority, TicketStatus } from "@aas/contracts";
 import {
   TICKET_COMMENT_MAX_LENGTH,
   TICKET_DESCRIPTION_MAX_LENGTH,
   TICKET_PRIORITIES,
   TICKET_STATUSES,
   TICKET_TITLE_MAX_LENGTH,
-} from "@rakazo/contracts";
+} from "@aas/contracts";
 import {
   Button,
   Dialog,
@@ -18,7 +18,7 @@ import {
   NativeSelect,
   NativeSelectOption,
   Textarea,
-} from "@rakazo/ui-web";
+} from "@aas/ui-web";
 import { ChevronLeft } from "lucide-react";
 import { useCallback, useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";

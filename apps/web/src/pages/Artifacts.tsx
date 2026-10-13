@@ -1,7 +1,7 @@
 import { Trans, useLingui } from "@lingui/react/macro";
-import { ChatMarkdown } from "@rakazo/chat-ui/web";
-import type { Artifact, ArtifactVersion, Bot } from "@rakazo/contracts";
-import { isAttachmentImageMimeType } from "@rakazo/contracts";
+import { ChatMarkdown } from "@aas/chat-ui/web";
+import type { Artifact, ArtifactVersion, Bot } from "@aas/contracts";
+import { isAttachmentImageMimeType } from "@aas/contracts";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,7 +17,7 @@ import {
   NativeSelectOption,
   parseBotAvatar,
   resolvePersonaColorDef,
-} from "@rakazo/ui-web";
+} from "@aas/ui-web";
 import {
   ChevronLeft,
   Download,
@@ -45,7 +45,7 @@ import { WindowChrome } from "./WindowChrome";
 
 type ViewMode = "grid" | "list";
 type DateFilter = "all" | "today" | "week" | "month";
-const VIEW_MODE_STORAGE_KEY = "rakazo:artifacts-view-mode";
+const VIEW_MODE_STORAGE_KEY = "aas:artifacts-view-mode";
 const LIST_PAGE_SIZE = 60;
 
 type ArtifactSummary = Artifact & { versionCount: number };

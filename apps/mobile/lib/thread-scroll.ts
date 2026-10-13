@@ -1,6 +1,6 @@
-import type { ThreadScrollState } from "@rakazo/core";
+import type { ThreadScrollState } from "@aas/core";
 
-export type { ThreadScrollState } from "@rakazo/core";
+export type { ThreadScrollState } from "@aas/core";
 
 export type ThreadScrollAction = "jump" | "smooth" | null;
 

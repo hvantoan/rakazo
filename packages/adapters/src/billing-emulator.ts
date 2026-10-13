@@ -4,7 +4,7 @@ import type {
   BillingProvider,
   BillingSubscriptionSnapshot,
   BillingSubscriptionStatus,
-} from "@rakazo/adapter-kit";
+} from "@aas/adapter-kit";
 import {
   parseStripeWebhook,
   pickBillingSubscription,

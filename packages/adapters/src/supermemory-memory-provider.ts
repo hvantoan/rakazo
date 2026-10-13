@@ -8,8 +8,8 @@ import type {
   SemanticMemoryResponse,
   SemanticMemoryResult,
   SemanticMemorySaveRequest,
-} from "@rakazo/adapter-kit";
-import { isCloudMetadataHost, isLocalMcpHost } from "@rakazo/contracts";
+} from "@aas/adapter-kit";
+import { isCloudMetadataHost, isLocalMcpHost } from "@aas/contracts";
 import type { ResolvedAddress, ResolveHostname } from "./network-address.js";
 import { isCloudMetadataAddress, isLinkLocalAddress, isPrivateAddress } from "./network-address.js";
 import { isPrivateRemoteMcpHostname } from "./remote-mcp.js";
@@ -179,14 +179,14 @@ export function decodeLegacySupermemoryCredentials(
 }
 
 function durableContainerTags(scope: DurableMemoryScope, botId: string, spaceId: string): string[] {
-  const isolated = `rakazo:${botId}`;
+  const isolated = `aas:${botId}`;
   // This external namespace predates the Space rename. Keep it stable so
   // existing durable memories remain recallable; the identifier is a Space ID.
-  return scope === "shared" ? [`rakazo:workspace:${spaceId}`, isolated] : [isolated];
+  return scope === "shared" ? [`aas:workspace:${spaceId}`, isolated] : [isolated];
 }
 
 function historyContainerTag(botId: string, generation: number): string {
-  return `rakazo:${botId}:history:${generation}`;
+  return `aas:${botId}:history:${generation}`;
 }
 
 function recallContainerTags(request: SemanticMemoryRecallRequest, spaceId: string): string[] {

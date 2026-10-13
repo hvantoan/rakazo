@@ -1,7 +1,7 @@
-import { waitForModelOAuthCompletion } from "@rakazo/core";
+import { waitForModelOAuthCompletion } from "@aas/core";
 import { rpc } from "./api";
 
-export { cancelModelOAuthAttempt, finishModelOAuthAttempt } from "@rakazo/core";
+export { cancelModelOAuthAttempt, finishModelOAuthAttempt } from "@aas/core";
 
 type CompleteOAuthResult =
   | { status: "pending" }

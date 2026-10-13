@@ -45,7 +45,7 @@ shell-%:
 
 ## Postgres shell
 psql:
-	$(COMPOSE) exec postgres psql -U rakazo -d rakazo
+	$(COMPOSE) exec postgres psql -U aas -d aas
 
 ## DANGER: stop stack and delete Postgres volume + all data
 clean:

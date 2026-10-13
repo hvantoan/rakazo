@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 
-import { AiConsentBlocked, resolveComposerSendPlan } from "@rakazo/core";
+import { AiConsentBlocked, resolveComposerSendPlan } from "@aas/core";
 import type { ReactNode } from "react";
 import { act, createElement } from "react";
 import type { Root } from "react-dom/client";

@@ -7,7 +7,7 @@ import type {
   VoiceProvider,
   VoiceSynthesizeRequest,
   VoiceVerifyResult,
-} from "@rakazo/adapter-kit";
+} from "@aas/adapter-kit";
 import {
   readVoiceAudio,
   readVoiceJson,

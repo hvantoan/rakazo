@@ -11,8 +11,8 @@ import type {
   SandboxProvider,
   ScreenRequest,
   TerminalRequest,
-} from "@rakazo/adapter-kit";
-import type { PrismaClient } from "@rakazo/db";
+} from "@aas/adapter-kit";
+import type { PrismaClient } from "@aas/db";
 import { DesktopSandboxProvider } from "./desktop-sandbox.js";
 import { createSandboxProvider, type SandboxProviderOptions } from "./sandbox-factory.js";
 

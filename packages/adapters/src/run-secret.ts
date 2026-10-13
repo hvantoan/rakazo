@@ -1,13 +1,13 @@
-import type { AdapterContext, ManagedConnectorProvider, SecretStore } from "@rakazo/adapter-kit";
+import type { AdapterContext, ManagedConnectorProvider, SecretStore } from "@aas/adapter-kit";
 import {
   encodeLoginSecret,
   LoginSecretValue,
   MessageBlock as MessageBlockSchema,
   SecretAskPurpose,
-} from "@rakazo/contracts";
-import { isSecretAskBlock } from "@rakazo/core";
-import type { PrismaClient, RunSecretWriter } from "@rakazo/db";
-import { withTransactionRetry } from "@rakazo/db";
+} from "@aas/contracts";
+import { isSecretAskBlock } from "@aas/core";
+import type { PrismaClient, RunSecretWriter } from "@aas/db";
+import { withTransactionRetry } from "@aas/db";
 import { type ApprovalPausedToolResult, resolveDuplicateEffectGate } from "./approval-effect.js";
 import { prepareBotSecret } from "./bot-secrets.js";
 import { persistPreparedSecret } from "./secret-persistence.js";

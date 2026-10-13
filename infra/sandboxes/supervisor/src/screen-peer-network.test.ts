@@ -1,6 +1,6 @@
 import type * as NodeHttp from "node:http";
 import { Readable } from "node:stream";
-import { resolveSupervisorToken } from "@rakazo/core";
+import { resolveSupervisorToken } from "@aas/core";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
@@ -51,7 +51,7 @@ function fixture() {
     inspect: vi.fn().mockResolvedValue({
       Id: "computer",
       Config: {
-        Labels: { "rakazo.managed": "true", "rakazo.botId": "bot", "rakazo.spaceId": "space" },
+        Labels: { "aas.managed": "true", "aas.botId": "bot", "aas.spaceId": "space" },
       },
       HostConfig: { NetworkMode: "bot-network" },
       State: { Running: true },
@@ -86,9 +86,9 @@ async function openScreen() {
     headers: {
       authorization: `Bearer ${resolveSupervisorToken(process.env)}`,
       "content-type": "application/json",
-      "x-rakazo-bot-id": "bot",
-      "x-rakazo-space-id": "space",
-      "x-rakazo-screen-id": "writer",
+      "x-aas-bot-id": "bot",
+      "x-aas-space-id": "space",
+      "x-aas-screen-id": "writer",
     },
     body: JSON.stringify({ interactive: false }),
   });

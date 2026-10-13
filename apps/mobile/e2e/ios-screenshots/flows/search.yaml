@@ -1,10 +1,10 @@
-appId: com.rakazo.app
+appId: com.agentsassistance.app
 name: Search
 ---
 - runFlow:
     file: ../subflows/sign-in.yaml
     env:
-      RAKAZO_ACTIVE_EMAIL: ${RAKAZO_SCREENSHOT_EMAIL}
+      AAS_ACTIVE_EMAIL: ${AAS_SCREENSHOT_EMAIL}
 - tapOn: "Search"
 - takeScreenshot: 01-search-empty
 - inputText: "zzzz-no-such-fixture"

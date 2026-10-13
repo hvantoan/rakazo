@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Aas Browser
+Comment=Chromium with Aas container flags and profile isolation
+Exec=/usr/local/bin/aas-browser %U
+Terminal=false
+Categories=Network;WebBrowser;
+MimeType=x-scheme-handler/http;x-scheme-handler/https;text/html;
+StartupNotify=false

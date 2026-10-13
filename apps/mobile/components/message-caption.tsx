@@ -1,5 +1,5 @@
-import { ChatMarkdown, LinkifiedText } from "@rakazo/chat-ui/native";
-import type { ColorTokens, ResolvedAppearance } from "@rakazo/ui-tokens";
+import { ChatMarkdown, LinkifiedText } from "@aas/chat-ui/native";
+import type { ColorTokens, ResolvedAppearance } from "@aas/ui-tokens";
 import type { MobileMessage } from "../lib/api";
 
 export function MessageCaption({

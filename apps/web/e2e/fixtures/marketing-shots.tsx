@@ -1,6 +1,6 @@
 import { I18nProvider } from "@lingui/react";
-import type { Bot } from "@rakazo/contracts";
-import { defaultCronPreset } from "@rakazo/core";
+import type { Bot } from "@aas/contracts";
+import { defaultCronPreset } from "@aas/core";
 import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { AskCard } from "../../src/components/AskCard";

@@ -12,12 +12,12 @@ import type {
   OAuthClientMetadata,
   OAuthTokens,
 } from "@modelcontextprotocol/sdk/shared/auth.js";
-import type { SecretStore } from "@rakazo/adapter-kit";
-import { SecretStoreUnavailableError } from "@rakazo/adapter-kit";
-import { isLocalMcpHost } from "@rakazo/contracts";
-import { readBoundedResponseBytes } from "@rakazo/core";
-import type { PrismaClient } from "@rakazo/db";
-import { getLogger } from "@rakazo/logging";
+import type { SecretStore } from "@aas/adapter-kit";
+import { SecretStoreUnavailableError } from "@aas/adapter-kit";
+import { isLocalMcpHost } from "@aas/contracts";
+import { readBoundedResponseBytes } from "@aas/core";
+import type { PrismaClient } from "@aas/db";
+import { getLogger } from "@aas/logging";
 import { sanitizeConnectorError } from "./connector-safety.js";
 import { secureFetch, validateUrl, withEndpointOriginFallback } from "./mcp-transport.js";
 import { actorMayUsePrivateEndpoint } from "./private-endpoint.js";
@@ -219,7 +219,7 @@ export class StoredMcpOAuthProvider implements OAuthClientProvider {
     const applicationType = hostname === "localhost" || hostname === "127.0.0.1" ? "native" : "web";
     return {
       redirect_uris: [redirectUri],
-      client_name: "Rakazo",
+      client_name: "Aas",
       grant_types: ["authorization_code", "refresh_token"],
       response_types: ["code"],
       token_endpoint_auth_method: "none",
@@ -622,7 +622,7 @@ export class McpOAuthBroker {
       authProvider: provider,
       fetch: networkFetch.fetch,
     });
-    const client = new Client({ name: "rakazo-oauth", version: "0.1.0" });
+    const client = new Client({ name: "aas-oauth", version: "0.1.0" });
     const signal = AbortSignal.timeout(15_000);
     try {
       await client.connect(transport, { signal, timeout: 15_000 });

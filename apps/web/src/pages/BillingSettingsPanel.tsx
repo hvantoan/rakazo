@@ -1,6 +1,6 @@
 import { Plural, Trans, useLingui } from "@lingui/react/macro";
-import type { BillingStatus } from "@rakazo/contracts";
-import { Button, Skeleton } from "@rakazo/ui-web";
+import type { BillingStatus } from "@aas/contracts";
+import { Button, Skeleton } from "@aas/ui-web";
 import { useEffect, useState } from "react";
 import { formatBillingDate, formatBillingPrice } from "../lib/billing";
 import { rpc } from "../lib/rpc";

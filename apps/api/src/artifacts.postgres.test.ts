@@ -1,7 +1,7 @@
-import type { ArtifactStore } from "@rakazo/adapter-kit";
-import type { Actor } from "@rakazo/contracts";
-import type { PrismaClient } from "@rakazo/db";
-import { createDb, IsolationError } from "@rakazo/db";
+import type { ArtifactStore } from "@aas/adapter-kit";
+import type { Actor } from "@aas/contracts";
+import type { PrismaClient } from "@aas/db";
+import { createDb, IsolationError } from "@aas/db";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { createOwnedArtifact } from "./artifacts.js";
 
@@ -17,7 +17,7 @@ describePostgres("artifact upload nonce (PostgreSQL)", () => {
   const actor: Actor = {
     userId,
     spaceId,
-    email: `${userId}@rakazo.test`,
+    email: `${userId}@aas.test`,
     isDeploymentOwner: false,
   };
   const stored = new Set<string>();
@@ -54,7 +54,7 @@ describePostgres("artifact upload nonce (PostgreSQL)", () => {
       await db.pool.end();
     };
     await prisma.user.create({
-      data: { id: userId, name: userId, email: `${userId}@rakazo.test`, emailVerified: false },
+      data: { id: userId, name: userId, email: `${userId}@aas.test`, emailVerified: false },
     });
     await prisma.organization.create({
       data: { id: organizationId, name: "Nonce Org", slug: organizationId, createdAt: new Date() },

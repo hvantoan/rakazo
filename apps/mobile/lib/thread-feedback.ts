@@ -1,6 +1,6 @@
-import type { AgentSkillCatalogEntry } from "@rakazo/contracts";
-import type { ComposerMention, resolveComposerSendPlan } from "@rakazo/core";
-import { isServerUnreachable } from "@rakazo/core";
+import type { AgentSkillCatalogEntry } from "@aas/contracts";
+import type { ComposerMention, resolveComposerSendPlan } from "@aas/core";
+import { isServerUnreachable } from "@aas/core";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import type { rpc } from "./api";
 import { t } from "./i18n";

@@ -4,7 +4,7 @@ import http from "node:http";
 import net from "node:net";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { resolveSupervisorToken } from "@rakazo/core";
+import { resolveSupervisorToken } from "@aas/core";
 import { describe, expect, it } from "vitest";
 import {
   MAX_SUPERVISOR_FILE_REQUEST_BYTES,
@@ -125,7 +125,7 @@ describe("computer screen readiness", () => {
 
 describe("sandbox supervisor Docker endpoint", () => {
   it("discovers the unprivileged Docker Desktop socket on macOS", () => {
-    const home = mkdtempSync(path.join(tmpdir(), "rakazo-docker-home-"));
+    const home = mkdtempSync(path.join(tmpdir(), "aas-docker-home-"));
     try {
       expect(resolveDockerSocketPath({ HOME: home }, "darwin")).toBe("/var/run/docker.sock");
       const socket = path.join(home, ".docker", "run", "docker.sock");
@@ -258,8 +258,8 @@ describe("sandbox supervisor HTTP boundary", () => {
       headers: {
         authorization: `Bearer ${token}`,
         "content-type": "application/json",
-        "x-rakazo-bot-id": "other-bot",
-        "x-rakazo-space-id": "workspace",
+        "x-aas-bot-id": "other-bot",
+        "x-aas-space-id": "workspace",
       },
       body: JSON.stringify({
         botId: "bot",
@@ -296,11 +296,11 @@ describe("sandbox supervisor input containment", () => {
 
   it("accepts the legacy workspace label without weakening container identity", () => {
     expect(
-      hasComputerIdentity({ "rakazo.botId": "bot", "rakazo.workspaceId": "space" }, "bot", "space"),
+      hasComputerIdentity({ "aas.botId": "bot", "aas.workspaceId": "space" }, "bot", "space"),
     ).toBe(true);
     expect(
       hasComputerIdentity(
-        { "rakazo.botId": "bot", "rakazo.workspaceId": "other-space" },
+        { "aas.botId": "bot", "aas.workspaceId": "other-space" },
         "bot",
         "space",
       ),
@@ -308,9 +308,9 @@ describe("sandbox supervisor input containment", () => {
     expect(
       hasComputerIdentity(
         {
-          "rakazo.botId": "bot",
-          "rakazo.spaceId": "space",
-          "rakazo.workspaceId": "other-space",
+          "aas.botId": "bot",
+          "aas.spaceId": "space",
+          "aas.workspaceId": "other-space",
         },
         "bot",
         "space",
@@ -331,7 +331,7 @@ describe("sandbox supervisor input containment", () => {
       expect(
         containerActionStep({ kind: "launch", application, uri: "https://example.com" }, ":2"),
       ).toEqual({
-        argv: ["env", "DISPLAY=:2", "rakazo-browser", "https://example.com"],
+        argv: ["env", "DISPLAY=:2", "aas-browser", "https://example.com"],
       });
     }
     expect(containerActionStep({ kind: "launch", application: "xterm" }, ":3")).toEqual({
@@ -344,7 +344,7 @@ describe("sandbox supervisor input containment", () => {
 
   it("routes focus actions through the focus-or-launch wrapper", () => {
     expect(containerActionStep({ kind: "focus", application: "xterm" }, ":3")).toEqual({
-      argv: ["env", "DISPLAY=:3", "rakazo-focus-or-launch", "xterm"],
+      argv: ["env", "DISPLAY=:3", "aas-focus-or-launch", "xterm"],
     });
     expect(
       containerActionStep(
@@ -355,8 +355,8 @@ describe("sandbox supervisor input containment", () => {
       argv: [
         "env",
         "DISPLAY=:2",
-        "rakazo-focus-or-launch",
-        "rakazo-browser",
+        "aas-focus-or-launch",
+        "aas-browser",
         "https://example.com",
       ],
     });
@@ -365,14 +365,14 @@ describe("sandbox supervisor input containment", () => {
       argv: [
         "env",
         "DISPLAY=:2",
-        `RAKAZO_BROWSER_PROFILE=${profile}`,
-        "rakazo-focus-or-launch",
-        "rakazo-browser",
+        `AAS_BROWSER_PROFILE=${profile}`,
+        "aas-focus-or-launch",
+        "aas-browser",
       ],
     });
     // A non-browser application never receives the per-screen browser profile.
     expect(containerActionStep({ kind: "focus", application: "xterm" }, ":2", profile)).toEqual({
-      argv: ["env", "DISPLAY=:2", "rakazo-focus-or-launch", "xterm"],
+      argv: ["env", "DISPLAY=:2", "aas-focus-or-launch", "xterm"],
     });
   });
 
@@ -381,7 +381,7 @@ describe("sandbox supervisor input containment", () => {
       expect(
         containerActionStep({ kind: "launch", application, uri: "https://example.com" }, ":2"),
       ).toEqual({
-        argv: ["env", "DISPLAY=:2", "rakazo-browser", "https://example.com"],
+        argv: ["env", "DISPLAY=:2", "aas-browser", "https://example.com"],
       });
     }
     expect(containerActionStep({ kind: "launch", application: "XTerm" }, ":3")).toEqual({
@@ -397,8 +397,8 @@ describe("sandbox supervisor input containment", () => {
         argv: [
           "env",
           "DISPLAY=:2",
-          `RAKAZO_BROWSER_PROFILE=${profile}`,
-          "rakazo-browser",
+          `AAS_BROWSER_PROFILE=${profile}`,
+          "aas-browser",
           "https://example.com",
         ],
       },
@@ -410,7 +410,7 @@ describe("sandbox supervisor input containment", () => {
         argv: [
           "env",
           "DISPLAY=:2",
-          `RAKAZO_BROWSER_PROFILE=${profile}`,
+          `AAS_BROWSER_PROFILE=${profile}`,
           "xdg-open",
           "https://example.com",
         ],
@@ -574,7 +574,7 @@ describe("sandbox supervisor input containment", () => {
     expect(interactiveScreenCommand(true, "lease-new")).toMatch(/6080/);
     expect(interactiveScreenCommand(true, "lease-new")).not.toContain("sockets/view-1-");
     expect(interactiveScreenCommand(false, "lease-old")).toContain("= 'lease-old'");
-    expect(interactiveScreenCommand(false, "lease-old")).toContain("RAKAZO_CONTROL_RELEASED");
+    expect(interactiveScreenCommand(false, "lease-old")).toContain("AAS_CONTROL_RELEASED");
   });
 
   it("assigns distinct screen indexes per Team bot and starts extra displays", () => {
@@ -635,8 +635,8 @@ describe("sandbox supervisor input containment", () => {
   it("resets stale managed screens without killing unrelated container jobs", () => {
     const command = resetManagedScreensCommand();
     expect(command).toContain("chromium-bot-*");
-    expect(command).toContain("for marker in /tmp/rakazo/browser-profile-*");
-    expect(command).toContain("/tmp/rakazo/browser-pid-*");
+    expect(command).toContain("for marker in /tmp/aas/browser-profile-*");
+    expect(command).toContain("/tmp/aas/browser-pid-*");
     expect(command).not.toContain("pkill -9 -1");
   });
 
@@ -649,12 +649,12 @@ describe("sandbox supervisor input containment", () => {
     expect(command).toContain(writer);
     expect(ensureScreenCommand(3, "writer", "view-token")).toContain(writer);
     expect(ensureScreenCommand(0, "researcher", "view-token")).toContain(researcher);
-    expect(command).not.toContain("/home/rakazo/.browser-profiles/chromium/.");
-    expect(command).not.toContain(".rakazo-base-generation");
+    expect(command).not.toContain("/home/aas/.browser-profiles/chromium/.");
+    expect(command).not.toContain(".aas-base-generation");
     expect(command).toContain("browser-pid-");
     expect(command).toContain("tr '\\0' '\\n' <\"/proc/$1/cmdline\"");
     expect(browserProfilePathForScreen("../../writer")).toMatch(
-      /^\/home\/rakazo\/\.browser-profiles\/chromium-bot-[0-9a-f]+$/,
+      /^\/home\/aas\/\.browser-profiles\/chromium-bot-[0-9a-f]+$/,
     );
   });
 
@@ -771,7 +771,7 @@ describe("sandbox supervisor input containment", () => {
     expect(primary).not.toContain("websockify");
     expect(primary).toContain("sockets/view-1-");
     expect(primary).toContain("sockets/control-1-");
-    expect(primary).toContain("rm -f /tmp/rakazo/control-token-1");
+    expect(primary).toContain("rm -f /tmp/aas/control-token-1");
     expect(primary).toContain("transport failed to stop");
 
     const extra = stopExtraScreenCommand(1, "researcher");
@@ -929,9 +929,9 @@ describe("computer command identity", () => {
   it("runs the user's terminal as the same workspace user and environment as the bot's shell", () => {
     expect(computerCommandEnv({ display: ":2" })).toEqual([
       "DISPLAY=:2",
-      "HOME=/home/rakazo",
-      "PATH=/home/rakazo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-      "NPM_CONFIG_PREFIX=/home/rakazo/.local",
+      "HOME=/home/aas",
+      "PATH=/home/aas/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "NPM_CONFIG_PREFIX=/home/aas/.local",
       "PIP_USER=1",
     ]);
     const source = readFileSync(new URL("./index.ts", import.meta.url), "utf8");

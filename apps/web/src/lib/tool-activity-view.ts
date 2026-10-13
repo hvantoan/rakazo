@@ -1,5 +1,5 @@
-import type { MessageBlock } from "@rakazo/contracts";
-import { isToolActivityBlock } from "@rakazo/core";
+import type { MessageBlock } from "@aas/contracts";
+import { isToolActivityBlock } from "@aas/core";
 
 /**
  * Compact human duration for a tool-activity card summary.

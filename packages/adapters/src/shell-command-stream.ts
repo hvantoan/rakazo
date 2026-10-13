@@ -1,5 +1,5 @@
-import type { ProcessEvent } from "@rakazo/adapter-kit";
-import { redactSecrets } from "@rakazo/core";
+import type { ProcessEvent } from "@aas/adapter-kit";
+import { redactSecrets } from "@aas/core";
 import { redactShellStreams } from "./agent-environment.js";
 import { clipToolResultText } from "./pi-runtime-limits.js";
 

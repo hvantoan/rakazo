@@ -1,7 +1,7 @@
 import type { OAuthClientProvider } from "@modelcontextprotocol/sdk/client/auth.js";
-import type { AdapterContext } from "@rakazo/adapter-kit";
-import type { Prisma, PrismaClient } from "@rakazo/db";
-import { withTransactionRetry } from "@rakazo/db";
+import type { AdapterContext } from "@aas/adapter-kit";
+import type { Prisma, PrismaClient } from "@aas/db";
+import { withTransactionRetry } from "@aas/db";
 import { describe, expect, it, vi } from "vitest";
 import { InfisicalSecretStore } from "./infisical-secret-store.js";
 import { McpConnector } from "./mcp-connector.js";

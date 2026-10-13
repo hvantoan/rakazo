@@ -1,7 +1,7 @@
 import { ORPCError } from "@orpc/server";
-import type { Actor, RoutineHistory, RoutineRun, RoutineRunCursor } from "@rakazo/contracts";
-import type { PrismaClient } from "@rakazo/db";
-import { Prisma } from "@rakazo/db";
+import type { Actor, RoutineHistory, RoutineRun, RoutineRunCursor } from "@aas/contracts";
+import type { PrismaClient } from "@aas/db";
+import { Prisma } from "@aas/db";
 
 export async function listRoutineRuns(
   prisma: PrismaClient,

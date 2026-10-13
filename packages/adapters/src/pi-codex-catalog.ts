@@ -1,8 +1,8 @@
 import type { OAuthCredential } from "@earendil-works/pi-ai";
-import type { SecretStore } from "@rakazo/adapter-kit";
-import type { ThinkingLevel } from "@rakazo/contracts";
-import { ThinkingLevelSchema } from "@rakazo/contracts";
-import type { PrismaClient } from "@rakazo/db";
+import type { SecretStore } from "@aas/adapter-kit";
+import type { ThinkingLevel } from "@aas/contracts";
+import { ThinkingLevelSchema } from "@aas/contracts";
+import type { PrismaClient } from "@aas/db";
 import type { ModelCredentialAuthKind } from "./pi-catalog-availability.js";
 import type { PiCatalogEntry } from "./pi-models.js";
 import { listPiCatalog } from "./pi-models.js";
@@ -96,7 +96,7 @@ export async function fetchCodexCatalog(
       headers: {
         authorization: `Bearer ${accessToken}`,
         "chatgpt-account-id": accountId,
-        originator: "rakazo",
+        originator: "aas",
         accept: "application/json",
       },
       redirect: "error",

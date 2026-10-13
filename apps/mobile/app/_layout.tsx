@@ -1,9 +1,9 @@
-import type { LinkFavicons } from "@rakazo/chat-ui/native";
+import type { LinkFavicons } from "@aas/chat-ui/native";
 import {
   LinkFaviconsContext,
   MarkdownLinkPromptProvider,
   RemoteImagesContext,
-} from "@rakazo/chat-ui/native";
+} from "@aas/chat-ui/native";
 import { DarkTheme, Stack, ThemeProvider } from "expo-router";
 import * as ScreenOrientation from "expo-screen-orientation";
 import * as SplashScreen from "expo-splash-screen";
@@ -176,7 +176,7 @@ export default function Layout() {
                       contentStyle: { backgroundColor: String(native.page) },
                     }}
                   >
-                    <Stack.Screen name="index" options={{ headerShown: false, title: "Rakazo" }} />
+                    <Stack.Screen name="index" options={{ headerShown: false, title: "Aas" }} />
                     <Stack.Screen name="sign-in" options={{ headerShown: false }} />
                     <Stack.Screen
                       name="(settings)"
