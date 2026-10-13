@@ -1,6 +1,6 @@
 {
-  "name": "Aas",
-  "short_name": "Aas",
+  "name": "Agents Assistance",
+  "short_name": "Agents Assistance",
   "description": "Your team of always-on agents.",
   "start_url": "/",
   "display": "standalone",

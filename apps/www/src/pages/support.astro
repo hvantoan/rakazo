@@ -9,21 +9,21 @@ const stars = await fetchGithubStars();
 const starsLabel = stars === null ? "Star" : formatStarCount(stars);
 ---
 
-<BaseLayout title="Support · Aas" description="Get help with the Aas app and self-hosted Aas.">
+<BaseLayout title="Support · Agents Assistance" description="Get help with the Agents Assistance app and self-hosted Agents Assistance.">
   <div class="container">
     <Header starsLabel={starsLabel} />
     <main id="main" class="privacy-copy">
-      <h1>Aas support</h1>
+      <h1>Agents Assistance support</h1>
       <p>
-        For help with the Aas mobile app or a hosted Aas account, email{" "}
+        For help with the Agents Assistance mobile app or a hosted Agents Assistance account, email{" "}
         <a href="mailto:hello@aas.com">hello@aas.com</a>. Include the email address on your
         account, what you expected to happen, and any error message you saw. Do not send passwords, API keys,
         access tokens, or other secrets.
       </p>
-      <h2>Self-hosted Aas</h2>
+      <h2>Self-hosted Agents Assistance</h2>
       <p>
         Start with the <a href={SELF_HOST_GUIDE_PATH}>self-hosting guide</a>. For reproducible bugs or feature requests,
-        open an issue in the <a href={`${GITHUB_URL}/issues`}>Aas GitHub repository</a>.
+        open an issue in the <a href={`${GITHUB_URL}/issues`}>Agents Assistance GitHub repository</a>.
       </p>
       <h2>Account deletion</h2>
       <p>

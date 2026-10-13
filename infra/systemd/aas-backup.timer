@@ -1,5 +1,5 @@
 [Unit]
-Description=Run the Aas production backup nightly
+Description=Run the Agents Assistance production backup nightly
 
 [Timer]
 OnCalendar=*-*-* 02:15:00 UTC

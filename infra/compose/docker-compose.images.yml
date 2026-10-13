@@ -34,7 +34,7 @@ services:
 
   # Pull-only stub so `compose up` fetches the published desktop image without a checkout.
   computer:
-    image: ${AAS_COMPUTER_IMAGE:-ghcr.io/elie222/aas/computer}:${AAS_COMPUTER_IMAGE_TAG:-edge}
+    image: ${AAS_COMPUTER_IMAGE:-ghcr.io/hvantoan/agents-assistance/computer}:${AAS_COMPUTER_IMAGE_TAG:-edge}
     command: ["true"]
     network_mode: none
     restart: "no"
@@ -51,7 +51,7 @@ services:
   # Runs from the app image. Not published as its own image and not exposed on the host:
   # access to the supervisor is equivalent to control of the Docker host.
   supervisor:
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-edge}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-edge}
     restart: unless-stopped
     command: ["pnpm", "--filter", "@aas/sandbox-supervisor", "start"]
     init: true
@@ -66,7 +66,7 @@ services:
       SUPERVISOR_HOST: "0.0.0.0"
       SUPERVISOR_PORT: "7091"
       DOCKER_SOCKET: /var/run/docker.sock
-      AAS_COMPUTER_IMAGE: ${AAS_COMPUTER_IMAGE:-ghcr.io/elie222/aas/computer}:${AAS_COMPUTER_IMAGE_TAG:-edge}
+      AAS_COMPUTER_IMAGE: ${AAS_COMPUTER_IMAGE:-ghcr.io/hvantoan/agents-assistance/computer}:${AAS_COMPUTER_IMAGE_TAG:-edge}
       AAS_COMPUTER_MEMORY: ${AAS_COMPUTER_MEMORY:-2g}
       AAS_COMPUTER_CPUS: ${AAS_COMPUTER_CPUS:-2}
       AAS_COMPUTER_PIDS_LIMIT: ${AAS_COMPUTER_PIDS_LIMIT:-2048}
@@ -101,7 +101,7 @@ services:
       retries: 20
 
   api:
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-edge}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-edge}
     restart: unless-stopped
     command:
       - bash
@@ -179,7 +179,7 @@ services:
       retries: 20
 
   worker:
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-edge}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-edge}
     restart: unless-stopped
     command: ["pnpm", "--filter", "@aas/worker", "start"]
     init: true
@@ -239,7 +239,7 @@ services:
         condition: service_healthy
 
   web:
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-edge}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-edge}
     restart: unless-stopped
     command: ["pnpm", "--filter", "@aas/web", "preview", "--host", "0.0.0.0", "--port", "5173"]
     init: true

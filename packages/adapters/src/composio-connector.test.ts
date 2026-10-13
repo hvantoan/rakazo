@@ -1157,7 +1157,7 @@ describe("composio tool mapping", () => {
     ).toEqual({ connectIds: ["row-gh"], revokeIds: [] });
   });
 
-  it("only fetches live Composio slugs when a Aas row is still pending or errored", () => {
+  it("only fetches live Composio slugs when an Agents Assistance row is still pending or errored", () => {
     expect(needsLivePluginSync([{ status: "connected" }, { status: "revoked" }])).toBe(false);
     expect(needsLivePluginSync([{ status: "pending" }])).toBe(true);
     expect(needsLivePluginSync([{ status: "error" }])).toBe(true);
@@ -1172,7 +1172,7 @@ describe("composio tool mapping", () => {
     ).toEqual([{ provider: "github", displayName: "GitHub" }]);
   });
 
-  it("plans DB sync when Composio is connected but Aas is still pending", () => {
+  it("plans DB sync when Composio is connected but Agents Assistance is still pending", () => {
     expect(
       planLiveConnectionSync(
         [

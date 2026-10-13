@@ -924,8 +924,8 @@ msgid "Choose file"
 msgstr "Выбрать файл"
 
 #: src/pages/ModelSettingsOverlay.tsx
-msgid "Choose which connected model Aas uses."
-msgstr "Выберите, какую подключенную модель использует Aas."
+msgid "Choose which connected model Agents Assistance uses."
+msgstr "Выберите, какую подключенную модель использует Agents Assistance."
 
 #: src/pages/shell/dialogs.tsx
 msgid "Clear"
@@ -1759,8 +1759,8 @@ msgid "Create space"
 msgstr "Создайте пространство"
 
 #: src/pages/Auth.tsx
-msgid "Create your Aas"
-msgstr "Создайте свой Aas"
+msgid "Create your Agents Assistance"
+msgstr "Создайте свой Agents Assistance"
 
 #: src/components/AskCard.tsx
 msgid "Created"
@@ -3343,8 +3343,8 @@ msgid "Paste a replacement key"
 msgstr "Вставьте запасной ключ"
 
 #: src/pages/ModelSettingsOverlay.tsx
-msgid "Paste the OpenAI-compatible address from your server. Aas adds /v1 if needed."
-msgstr "Вставьте OpenAI-совместимый адрес со своего сервера. При необходимости Aas добавляет /v1."
+msgid "Paste the OpenAI-compatible address from your server. Agents Assistance adds /v1 if needed."
+msgstr "Вставьте OpenAI-совместимый адрес со своего сервера. При необходимости Agents Assistance добавляет /v1."
 
 #: src/pages/VoiceSettingsOverlay.tsx
 msgid "Paste your API key"
@@ -3738,8 +3738,8 @@ msgid "Retry screen"
 msgstr "Повторить загрузку экрана"
 
 #: src/pages/McpOAuthCallback.tsx
-msgid "Return to Aas"
-msgstr "Вернуться в Aas"
+msgid "Return to Agents Assistance"
+msgstr "Вернуться в Agents Assistance"
 
 #. placeholder {0}: doc.revision
 #: src/pages/KnowledgeSection.tsx
@@ -4097,8 +4097,8 @@ msgid "Sign in again"
 msgstr ""
 
 #: src/pages/Auth.tsx
-msgid "Sign in to Aas"
-msgstr "Войти в Aas"
+msgid "Sign in to Agents Assistance"
+msgstr "Войти в Agents Assistance"
 
 #: src/lib/user-error.ts
 msgid "Sign in to your existing account to link SSO"
@@ -4450,8 +4450,8 @@ msgid "This server is already connected. Disconnect it first to authorize again.
 msgstr "Этот сервер уже подключен. Сначала отключите его, чтобы авторизоваться снова."
 
 #: src/pages/ModelSettingsOverlay.tsx
-msgid "This subscription sign-in is not available in Aas yet. Use a deployment credential or choose another provider."
-msgstr "Вход по этой подписке пока недоступен в Aas. Используйте учетные данные развертывания или выберите другого поставщика."
+msgid "This subscription sign-in is not available in Agents Assistance yet. Use a deployment credential or choose another provider."
+msgstr "Вход по этой подписке пока недоступен в Agents Assistance. Используйте учетные данные развертывания или выберите другого поставщика."
 
 #: src/pages/Artifacts.tsx
 msgid "This week"

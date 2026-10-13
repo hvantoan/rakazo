@@ -21,11 +21,11 @@ export const VS_CARDS: Record<string, VsPoints> = {
     other: ["xAI hosts it", "Paid Cursor and SuperGrok", "No source to run"],
   },
   "openclaw-alternative": {
-    aas: ["Chat in the Aas app", "Docker installer, then chat", "Apache-2.0"],
+    aas: ["Chat in the Agents Assistance app", "Docker installer, then chat", "Apache-2.0"],
     other: ["Gateway for chat apps", "CLI, onboarding, config file", "MIT"],
   },
   "hermes-alternative": {
-    aas: ["Chat in the Aas app", "Docker installer, then chat", "Apache-2.0"],
+    aas: ["Chat in the Agents Assistance app", "Docker installer, then chat", "Apache-2.0"],
     other: ["Desktop app and a CLI", "Config under ~/.hermes", "MIT"],
   },
   "instinct-alternative": {

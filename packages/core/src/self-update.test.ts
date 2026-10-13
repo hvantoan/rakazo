@@ -18,7 +18,7 @@ import {
 describe("normalizeRepoUrl", () => {
   it("accepts the official repository and https forks", () => {
     expect(normalizeRepoUrl(OFFICIAL_REPO_URL)).toEqual({
-      url: "https://github.com/elie222/aas",
+      url: "https://github.com/hvantoan/agents-assistance",
     });
     expect(normalizeRepoUrl("  https://github.com/me/aas.git/  ")).toEqual({
       url: "https://github.com/me/aas.git",
@@ -69,18 +69,18 @@ describe("normalizeRepoUrl", () => {
 
 describe("repoIdentity", () => {
   it("treats every spelling of the same remote as one repository", () => {
-    const identity = "github.com/elie222/aas";
-    expect(repoIdentity("https://github.com/elie222/aas")).toBe(identity);
-    expect(repoIdentity("https://github.com/elie222/aas.git")).toBe(identity);
-    expect(repoIdentity("git@github.com:elie222/aas.git")).toBe(identity);
-    expect(repoIdentity("ssh://git@github.com/Elie222/Aas")).toBe(identity);
+    const identity = "github.com/hvantoan/agents-assistance";
+    expect(repoIdentity("https://github.com/hvantoan/agents-assistance")).toBe(identity);
+    expect(repoIdentity("https://github.com/hvantoan/agents-assistance.git")).toBe(identity);
+    expect(repoIdentity("git@github.com:hvantoan/agents-assistance.git")).toBe(identity);
+    expect(repoIdentity("ssh://git@github.com/Elie222/Agents Assistance")).toBe(identity);
     expect(repoIdentity("not a url")).toBeNull();
   });
 
   it("only calls the real upstream official", () => {
-    expect(isOfficialRepoUrl("git@github.com:elie222/aas.git")).toBe(true);
+    expect(isOfficialRepoUrl("git@github.com:hvantoan/agents-assistance.git")).toBe(true);
     expect(isOfficialRepoUrl("https://github.com/attacker/aas")).toBe(false);
-    expect(isOfficialRepoUrl("https://githubb.com/elie222/aas")).toBe(false);
+    expect(isOfficialRepoUrl("https://githubb.com/hvantoan/agents-assistance")).toBe(false);
   });
 });
 

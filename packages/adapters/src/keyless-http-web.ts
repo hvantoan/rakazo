@@ -68,7 +68,7 @@ export class KeylessHttpWebProvider implements WebProvider {
     this.fetchTimeoutMs = options.fetchTimeoutMs ?? 15_000;
     this.maxBufferBytes = options.maxBufferBytes ?? 5 * 1024 * 1024;
     this.userAgent =
-      options.userAgent ?? "Aas/0.1 (+https://github.com/elie222/aas; web tools)";
+      options.userAgent ?? "Agents Assistance/0.1 (+https://github.com/hvantoan/agents-assistance; web tools)";
   }
 
   describe() {

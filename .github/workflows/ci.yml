@@ -225,7 +225,7 @@ jobs:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
           if [[ -z "$EXPO_TOKEN" ]]; then
-            echo "Add an EXPO_TOKEN repository secret with access to the inbox-zero/aas Expo project." >&2
+            echo "Add an EXPO_TOKEN repository secret with access to the hvantoan/agents-assistance Expo project." >&2
             exit 1
           fi
 

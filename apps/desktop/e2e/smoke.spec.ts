@@ -4,7 +4,7 @@ import type { AasDesktop } from "@aas/contracts";
 
 const fixture = `<!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8"><title>Aas desktop smoke</title></head>
+  <head><meta charset="utf-8"><title>Agents Assistance desktop smoke</title></head>
   <body><main>Desktop fixture ready</main></body>
 </html>`;
 
@@ -21,7 +21,7 @@ test("launches with a narrow preload bridge and an isolated renderer", async () 
   try {
     const page = await app.firstWindow();
     await expect(page.getByText("Desktop fixture ready")).toBeVisible();
-    await expect(page).toHaveTitle("Aas desktop smoke");
+    await expect(page).toHaveTitle("Agents Assistance desktop smoke");
 
     const renderer = await page.evaluate(async () => {
       const desktop = (window as typeof window & { aasDesktop?: AasDesktop }).aasDesktop;

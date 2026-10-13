@@ -34,15 +34,15 @@ describe("agent content negotiation", () => {
   });
 
   it("returns cache-safe Markdown responses and omits bodies for HEAD", async () => {
-    const response = markdownResponse("# Aas\n");
+    const response = markdownResponse("# Agents Assistance\n");
     expect(response.headers.get("content-type")).toBe("text/markdown; charset=utf-8");
     expect(response.headers.get("link")).toBe(
       '</llms.txt>; rel="describedby"; type="text/plain"',
     );
     expect(response.headers.get("vary")).toBe("Accept, Accept-Encoding");
-    await expect(response.text()).resolves.toBe("# Aas\n");
+    await expect(response.text()).resolves.toBe("# Agents Assistance\n");
 
-    const headResponse = markdownResponse("# Aas\n", "HEAD", 404);
+    const headResponse = markdownResponse("# Agents Assistance\n", "HEAD", 404);
     expect(headResponse.status).toBe(404);
     expect(headResponse.headers.get("x-robots-tag")).toBe("noindex");
     await expect(headResponse.text()).resolves.toBe("");

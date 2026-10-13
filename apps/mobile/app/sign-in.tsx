@@ -191,9 +191,9 @@ export default function SignIn() {
                 {resetSent
                   ? t("Check your email")
                   : mode === "in"
-                    ? t("Sign in to Aas")
+                    ? t("Sign in to Agents Assistance")
                     : mode === "up"
-                      ? t("Sign up for Aas")
+                      ? t("Sign up for Agents Assistance")
                       : t("Reset your password")}
               </Text>
               {resetSent ? (

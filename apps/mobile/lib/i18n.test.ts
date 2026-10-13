@@ -51,7 +51,7 @@ describe("mobile i18n", () => {
     const { resetI18nForTests, t } = await import("./i18n");
     resetI18nForTests("zh-CN");
     expect(t("Account")).toBe("账户");
-    expect(t("Sign in to Aas")).toBe("登录 Aas");
+    expect(t("Sign in to Agents Assistance")).toBe("登录 Agents Assistance");
     expect(t("New bot")).toBe("新建 Bot");
     expect(t("{runs} runs · {tokens} tokens", { runs: 3, tokens: 12 })).toBe(
       "3 次运行 · 12 个 token",
@@ -60,7 +60,7 @@ describe("mobile i18n", () => {
 
     resetI18nForTests("ru");
     expect(t("Account")).toBe("Аккаунт");
-    expect(t("Sign in to Aas")).toBe("Войти в Aas");
+    expect(t("Sign in to Agents Assistance")).toBe("Войти в Agents Assistance");
     expect(t("New bot")).toBe("Новый бот");
     expect(t("{runs} runs · {tokens} tokens", { runs: 3, tokens: 12 })).toBe(
       "Запусков: 3 · токенов: 12",
@@ -69,7 +69,7 @@ describe("mobile i18n", () => {
 
     resetI18nForTests("de");
     expect(t("Account")).toBe("Konto");
-    expect(t("Sign in to Aas")).toBe("Bei Aas anmelden");
+    expect(t("Sign in to Agents Assistance")).toBe("Bei Agents Assistance anmelden");
     expect(t("New bot")).toBe("Neuer Bot");
     expect(t("{runs} runs · {tokens} tokens", { runs: 3, tokens: 12 })).toBe(
       "3 Ausführungen · 12 Token",

@@ -38,7 +38,7 @@ services:
     # The default tag is `local`, which no registry serves, so a fresh install builds from the
     # checkout via `up -d --build` instead of failing on a `pull` of an image that does not exist
     # yet. Once a release is published, pin AAS_IMAGE_TAG to it and the pull path takes over.
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-local}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-local}
     build:
       context: ../..
       dockerfile: infra/compose/Dockerfile
@@ -115,7 +115,7 @@ services:
       retries: 20
 
   worker:
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-local}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-local}
     build:
       context: ../..
       dockerfile: infra/compose/Dockerfile
@@ -176,7 +176,7 @@ services:
         condition: service_healthy
 
   web:
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-local}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-local}
     build:
       context: ../..
       dockerfile: infra/compose/Dockerfile
@@ -216,7 +216,7 @@ services:
     profiles: [updater]
     # Pinned separately from the application image: the updater does not recreate itself, so moving
     # its own version is an operator action, not something an update can do underneath itself.
-    image: ${AAS_UPDATER_IMAGE:-ghcr.io/elie222/aas/updater}:${AAS_UPDATER_IMAGE_TAG:-local}
+    image: ${AAS_UPDATER_IMAGE:-ghcr.io/hvantoan/agents-assistance/updater}:${AAS_UPDATER_IMAGE_TAG:-local}
     build:
       context: ../..
       dockerfile: infra/updater/Dockerfile
@@ -237,7 +237,7 @@ services:
       AAS_UPDATER_TOKEN: ${AAS_UPDATER_TOKEN:-}
       AAS_UPDATER_HOST: "0.0.0.0"
       AAS_UPDATER_PORT: "7092"
-      AAS_IMAGE: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}
+      AAS_IMAGE: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}
       # `-p` is available to Compose interpolation but is not injected into containers unless it is
       # declared here. The sidecar must target the project the operator actually started.
       COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME:-aas-prod}

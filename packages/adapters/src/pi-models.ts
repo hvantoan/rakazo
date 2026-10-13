@@ -206,18 +206,18 @@ function catalogBilling(
   const signInMeta = SUBSCRIPTION_SIGN_IN_PROVIDERS[providerId];
   if (signInMeta) return signInMeta.billing;
   if (providerId === LOCAL_PROVIDER_ID) {
-    return "Runs on infrastructure configured by the deployment owner. No model charges from Aas.";
+    return "Runs on infrastructure configured by the deployment owner. No model charges from Agents Assistance.";
   }
   if (providerId === OPENAI_COMPATIBLE_PROVIDER_ID) {
-    return "Runs on a URL you control. Aas does not pay for model usage.";
+    return "Runs on a URL you control. Agents Assistance does not pay for model usage.";
   }
   if (opts.oauth && !opts.apiKey) {
-    return `${name} subscription login is not in the Aas UI yet. Skip if this deployment already has credentials.`;
+    return `${name} subscription login is not in the Agents Assistance UI yet. Skip if this deployment already has credentials.`;
   }
   if (opts.apiKey) {
-    return `Uses your ${name} API key. Aas does not pay for model usage.`;
+    return `Uses your ${name} API key. Agents Assistance does not pay for model usage.`;
   }
-  return `Uses your ${name} key. Aas does not pay for model usage.`;
+  return `Uses your ${name} key. Agents Assistance does not pay for model usage.`;
 }
 
 export const scriptedCatalogEntry: PiCatalogEntry = {

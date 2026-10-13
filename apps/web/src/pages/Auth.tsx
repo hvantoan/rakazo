@@ -40,9 +40,9 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
   const title = sent ? (
     <Trans>Check your email</Trans>
   ) : mode === "in" ? (
-    <Trans>Sign in to Aas</Trans>
+    <Trans>Sign in to Agents Assistance</Trans>
   ) : mode === "up" ? (
-    <Trans>Create your Aas</Trans>
+    <Trans>Create your Agents Assistance</Trans>
   ) : (
     <Trans>Reset your password</Trans>
   );

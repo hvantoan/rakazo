@@ -73,7 +73,7 @@ export function classifyUpdaterFailure(error: unknown): UpdaterFailure {
   if (SIGNATURE.some((needle) => text.includes(needle))) {
     return {
       kind: "signature",
-      message: "This update could not be verified. Reinstall Aas from a trusted download.",
+      message: "This update could not be verified. Reinstall Agents Assistance from a trusted download.",
     };
   }
   return {

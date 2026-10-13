@@ -4,7 +4,7 @@ appId: com.agentsassistance.app
 - launchApp:
     stopApp: true
 - extendedWaitUntil:
-    visible: "Account|Sign up for Aas|Sign in to Aas"
+    visible: "Account|Sign up for Agents Assistance|Sign in to Agents Assistance"
     timeout: 40000
 - runFlow:
     when:
@@ -17,5 +17,5 @@ appId: com.agentsassistance.app
           timeout: 15000
       - tapOn: "Sign out"
 - extendedWaitUntil:
-    visible: "Sign up for Aas|Sign in to Aas"
+    visible: "Sign up for Agents Assistance|Sign in to Agents Assistance"
     timeout: 20000

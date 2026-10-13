@@ -1,6 +1,6 @@
-# Contributing to Aas
+# Contributing to Agents Assistance
 
-Thanks for helping improve Aas. Keep changes focused and testable.
+Thanks for helping improve Agents Assistance. Keep changes focused and testable.
 
 ## Run locally
 
@@ -88,6 +88,6 @@ capability config, fixtures, logs, or snapshots; use the encrypted secret store 
 
 | Address | Use for |
 | --- | --- |
-| [security@aas.com](mailto:security@aas.com) | Vulnerabilities only — see [SECURITY.md](SECURITY.md) |
-| [support@aas.com](mailto:support@aas.com) | User and support questions |
-| [elie@aas.com](mailto:elie@aas.com) | Maintainer |
+| [security issues](https://github.com/hvantoan/agents-assistance/issues) | Vulnerabilities only — see [SECURITY.md](SECURITY.md) |
+| [GitHub issues](https://github.com/hvantoan/agents-assistance/issues) | User and support questions |
+| [](https://github.com/hvantoan) | Maintainer |

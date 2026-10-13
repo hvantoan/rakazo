@@ -3,11 +3,11 @@ appId: com.agentsassistance.app
 - runFlow: launch-app.yaml
 - runFlow:
     when:
-      visible: "Sign up for Aas"
+      visible: "Sign up for Agents Assistance"
     commands:
       - tapOn: "Sign in"
 - extendedWaitUntil:
-    visible: "Sign in to Aas"
+    visible: "Sign in to Agents Assistance"
     timeout: 15000
 - tapOn: "Email"
 - inputText: ${AAS_ACTIVE_EMAIL}

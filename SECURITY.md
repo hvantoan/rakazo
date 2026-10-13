@@ -2,7 +2,7 @@
 
 ## Reporting vulnerabilities
 
-Email **security@aas.com** only. Do not open public GitHub issues for security bugs.
+Open a [GitHub issue](https://github.com/hvantoan/agents-assistance/issues) for security bugs.
 
 Please include:
 
@@ -14,12 +14,12 @@ We will acknowledge your report and work on a fix. Please do not file a public i
 
 ## Other contact
 
-- General support: **support@aas.com**
-- Maintainer: **elie@aas.com**
+- General support: [GitHub issues](https://github.com/hvantoan/agents-assistance/issues)
+- Maintainer: [](https://github.com/hvantoan)
 
 ## Scope
 
-This policy covers the Aas self-hosted product in **this repository**.
+This policy covers the Agents Assistance self-hosted product in **this repository**.
 
 Out of scope:
 

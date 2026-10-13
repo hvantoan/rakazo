@@ -183,11 +183,11 @@ function seedMailbox(): Mailbox {
       {
         messageId: "18c5f5d1a2b3c4d5",
         threadId: "18c5f5d1a2b3c4d5",
-        subject: "Welcome to Aas",
+        subject: "Welcome to Agents Assistance",
         sender: "hello@aas.test",
         to: "me@example.test",
         snippet: "Your inbox is ready for agent workflows.",
-        messageText: "Your inbox is ready for agent workflows.\n\n— Aas",
+        messageText: "Your inbox is ready for agent workflows.\n\n— Agents Assistance",
         labelIds: ["INBOX", "UNREAD"],
         internalDate: String(base),
       },
@@ -285,7 +285,7 @@ function githubReleaseTools(): ConnectorTool[] {
       inputSchema: {
         type: "object",
         properties: {
-          owner: { type: "string", description: "Repository owner, e.g. elie222" },
+          owner: { type: "string", description: "Repository owner, e.g. hvantoan" },
           repo: { type: "string", description: "Repository name, e.g. aas" },
         },
         required: ["owner", "repo"],
@@ -476,8 +476,8 @@ export class ComposioEmulator implements ComposioProvider {
   }
 
   private executeGithub(tool: string, args: Record<string, unknown>): Record<string, unknown> {
-    const owner = String(args.owner ?? args.owner_name ?? "elie222");
-    const repo = String(args.repo ?? args.repository ?? "aas");
+    const owner = String(args.owner ?? args.owner_name ?? "hvantoan");
+    const repo = String(args.repo ?? args.repository ?? "agents-assistance");
     const matched = this.githubReleases.filter(
       (release) =>
         release.owner.toLowerCase() === owner.toLowerCase() &&

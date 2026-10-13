@@ -1,6 +1,6 @@
 {
-  "name": "Aas",
-  "short_name": "Aas",
+  "name": "Agents Assistance",
+  "short_name": "Agents Assistance",
   "description": "An open source Grok Bot alternative for persistent AI teammates that do real work.",
   "start_url": "/",
   "display": "browser",

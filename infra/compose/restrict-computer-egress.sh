@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Restricted egress for Aas bot computers (SANDBOX_COMPUTER_EGRESS=restricted).
+# Restricted egress for Agents Assistance bot computers (SANDBOX_COMPUTER_EGRESS=restricted).
 #
 # Computers keep full public-internet egress (browsing, DNS, apt, git over SSH)
 # but can no longer reach:
@@ -323,7 +323,7 @@ install_persistence() {
   fi
   cat >"$UNIT_PATH" <<EOF
 [Unit]
-Description=Restrict Aas bot-computer egress (aas-c* bridges)
+Description=Restrict Agents Assistance bot-computer egress (aas-c* bridges)
 After=docker.service
 Wants=docker.service
 

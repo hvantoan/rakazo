@@ -110,7 +110,7 @@ export default function ServerScreen() {
           keyboardShouldPersistTaps="handled"
         >
           <Text style={{ color: tokens.mutedForeground, fontSize: 15, lineHeight: 22 }}>
-            {t("Enter your Aas server address.")}
+            {t("Enter your Agents Assistance server address.")}
           </Text>
           <TextInput
             autoCapitalize="none"

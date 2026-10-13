@@ -1,21 +1,21 @@
 appId: com.agentsassistance.app
-name: Aas mobile smoke
+name: Agents Assistance mobile smoke
 ---
 - launchApp:
     clearState: true
 
-- assertVisible: "Sign in to Aas"
+- assertVisible: "Sign in to Agents Assistance"
 - assertVisible: "Sign up"
 - tapOn: "Sign up"
-- assertVisible: "Sign up for Aas"
+- assertVisible: "Sign up for Agents Assistance"
 - assertVisible: "Name"
 - tapOn: "Sign in"
-- assertVisible: "Sign in to Aas"
+- assertVisible: "Sign in to Agents Assistance"
 - tapOn: "Email"
 - inputText: ${AAS_E2E_EMAIL}
 - tapOn: "Password"
 - inputText: ${AAS_E2E_PASSWORD}
-- tapOn: "Sign in to Aas"
+- tapOn: "Sign in to Agents Assistance"
 - tapOn: "Sign in"
 
 - extendedWaitUntil:

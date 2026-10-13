@@ -129,7 +129,7 @@ export async function fetchSafeWebBytes(
       resolve,
       dispatcher,
       maxBytes,
-      userAgent: options.userAgent ?? "Aas/0.1 (+https://github.com/elie222/aas)",
+      userAgent: options.userAgent ?? "Agents Assistance/0.1 (+https://github.com/hvantoan/agents-assistance)",
       headers: options.headers,
       signal,
       redirectsRemaining: options.maxRedirects ?? MAX_REDIRECTS,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Token-auth desktop control for the Aas supervisor."""
+"""Token-auth desktop control for the Agents Assistance supervisor."""
 
 import base64
 import ctypes

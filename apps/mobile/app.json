@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Aas",
-    "slug": "aas",
-    "owner": "inbox-zero",
+    "name": "Agents Assistance",
+    "slug": "agents-assistance",
+    "owner": "hvantoan",
     "scheme": "aas",
     "version": "1.0.5",
     "orientation": "default",
@@ -23,14 +23,14 @@
         "expo-audio",
         {
           "enableBackgroundPlayback": false,
-          "microphonePermission": "Aas uses the microphone for voice calls with your bots."
+          "microphonePermission": "Agents Assistance uses the microphone for voice calls with your bots."
         }
       ],
       [
         "expo-speech-recognition",
         {
-          "speechRecognitionPermission": "Aas turns your speech into messages during voice calls.",
-          "microphonePermission": "Aas uses the microphone for voice calls with your bots."
+          "speechRecognitionPermission": "Agents Assistance turns your speech into messages during voice calls.",
+          "microphonePermission": "Agents Assistance uses the microphone for voice calls with your bots."
         }
       ],
       "expo-localization",
@@ -45,9 +45,9 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Aas uses your photo library so you can attach images to a bot message.",
-          "cameraPermission": "Aas uses the camera so you can attach photos to a bot message.",
-          "microphonePermission": "Aas uses the microphone for voice calls with your bots."
+          "photosPermission": "Agents Assistance uses your photo library so you can attach images to a bot message.",
+          "cameraPermission": "Agents Assistance uses the camera so you can attach photos to a bot message.",
+          "microphonePermission": "Agents Assistance uses the microphone for voice calls with your bots."
         }
       ],
       "expo-sharing",
@@ -58,14 +58,14 @@
       "bundleIdentifier": "com.agentsassistance.app",
       "buildNumber": "1",
       "supportsTablet": false,
-      "icon": "../../packages/ui-tokens/assets/Aas.icon",
+      "icon": "../../packages/ui-tokens/assets/agents-assistance.icon",
       "config": {
         "usesNonExemptEncryption": false
       },
       "infoPlist": {
-        "NSCameraUsageDescription": "Aas uses the camera so you can attach photos to a bot message.",
-        "NSPhotoLibraryUsageDescription": "Aas uses your photo library so you can attach images to a bot message.",
-        "NSLocalNetworkUsageDescription": "Aas connects to a self-hosted Aas server on your local network.",
+        "NSCameraUsageDescription": "Agents Assistance uses the camera so you can attach photos to a bot message.",
+        "NSPhotoLibraryUsageDescription": "Agents Assistance uses your photo library so you can attach images to a bot message.",
+        "NSLocalNetworkUsageDescription": "Agents Assistance connects to a self-hosted Agents Assistance server on your local network.",
         "NSAppTransportSecurity": {
           "NSAllowsLocalNetworking": true
         }

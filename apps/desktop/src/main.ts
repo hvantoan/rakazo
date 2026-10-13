@@ -675,7 +675,7 @@ function installApplicationMenu() {
   };
   const changeServer: Electron.MenuItemConstructorOptions = {
     id: "change-aas-server",
-    label: "Change Aas Server…",
+    label: "Change Agents Assistance Server…",
     accelerator: "CmdOrCtrl+Shift+K",
     click: () => showSetupWindow(),
   };
@@ -726,7 +726,7 @@ function installApplicationMenu() {
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 }
 
-/** Setup IPC must only answer the setup window, never a connected Aas server. */
+/** Setup IPC must only answer the setup window, never a connected Agents Assistance server. */
 function fromSetupWindow(event: Electron.IpcMainInvokeEvent) {
   return (
     setupWindow !== null && !setupWindow.isDestroyed() && event.sender === setupWindow.webContents
@@ -753,7 +753,7 @@ async function probeServer(rawUrl: string, signal?: AbortSignal): Promise<Deskto
         ok: false,
         status: response.status,
         url,
-        error: "That address redirects elsewhere. Enter the final Aas server address.",
+        error: "That address redirects elsewhere. Enter the final Agents Assistance server address.",
       };
     }
     if (!response.ok) {
@@ -770,7 +770,7 @@ async function probeServer(rawUrl: string, signal?: AbortSignal): Promise<Deskto
         ok: false,
         status: response.status,
         url,
-        error: "That address did not respond like a Aas server.",
+        error: "That address did not respond like an Agents Assistance server.",
       };
     }
     return {
@@ -1178,7 +1178,7 @@ app.whenReady().then(async () => {
         if (managedUrl === null || !(await localStack.matchesDesiredStack())) {
           return {
             ok: false,
-            error: "The app-managed Aas services are not ready. Retry setup.",
+            error: "The app-managed Agents Assistance services are not ready. Retry setup.",
           };
         }
         openSetup = { mode: "new", serverUrl: managedUrl };

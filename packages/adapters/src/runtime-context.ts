@@ -321,7 +321,7 @@ export function createRuntimeContextPolicy(
         (message) =>
           (message as Message & OriginalMetadata).aasHistory &&
           !(message as Message & OriginalMetadata).aasMessageId &&
-          (text(message).startsWith("Aas-owned compacted context through message sequence ") ||
+          (text(message).startsWith("Agents Assistance-owned compacted context through message sequence ") ||
             text(message).startsWith(
               "Memory recalled from earlier conversations that fell outside the visible history.",
             )),

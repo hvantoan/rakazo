@@ -42,17 +42,17 @@ jobs:
         run: |
           pnpm --filter @aas/web build
           CSC_IDENTITY_AUTO_DISCOVERY=false pnpm --filter @aas/desktop exec electron-builder --mac --dir --publish never -c.mac.identity=null -c.mac.notarize=false
-          xcrun assetutil --info apps/desktop/out/mac-arm64/Aas.app/Contents/Resources/Assets.car > "$RUNNER_TEMP/icon-assets.json"
+          xcrun assetutil --info apps/desktop/out/mac-arm64/Agents Assistance.app/Contents/Resources/Assets.car > "$RUNNER_TEMP/icon-assets.json"
           jq -e 'any(.[]; .Name == "Icon" and .AssetType == "IconImageStack") and any(.[]; .Name == "Icon_Assets/orange-bot" and .AssetType == "Image")' "$RUNNER_TEMP/icon-assets.json"
-          iconutil -c iconset apps/desktop/out/mac-arm64/Aas.app/Contents/Resources/icon.icns -o "$RUNNER_TEMP/fallback.iconset"
+          iconutil -c iconset apps/desktop/out/mac-arm64/Agents Assistance.app/Contents/Resources/icon.icns -o "$RUNNER_TEMP/fallback.iconset"
           sips -s format png "$RUNNER_TEMP/fallback.iconset/icon_128x128@2x.png" --out "$RUNNER_TEMP/fallback-decoded.png"
           test -s "$RUNNER_TEMP/fallback-decoded.png"
-          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIconName' apps/desktop/out/mac-arm64/Aas.app/Contents/Info.plist)" = Icon
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIconName' apps/desktop/out/mac-arm64/Agents Assistance.app/Contents/Info.plist)" = Icon
         env:
           AAS_ALLOW_DEV_SECRETS: "1"
       - name: Capture packaged macOS setup window and Dock
         env:
-          AAS_E2E_EXECUTABLE: out/mac-arm64/Aas.app/Contents/MacOS/Aas
+          AAS_E2E_EXECUTABLE: out/mac-arm64/Agents Assistance.app/Contents/MacOS/Agents Assistance
         run: >-
           pnpm --filter @aas/desktop exec playwright test
           --config e2e/playwright.config.ts setup.spec.ts

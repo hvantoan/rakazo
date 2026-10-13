@@ -23,10 +23,10 @@
   const PHASE_LABELS = {
     "checking-docker": "Getting ready…",
     preparing: "Getting ready…",
-    pulling: "Downloading Aas…",
-    starting: "Starting Aas…",
+    pulling: "Downloading Agents Assistance…",
+    starting: "Starting Agents Assistance…",
     "waiting-healthy": "Almost ready…",
-    ready: "Aas is ready.",
+    ready: "Agents Assistance is ready.",
   };
   const TERMINAL_PHASES = new Set([
     "idle",
@@ -266,7 +266,7 @@
       const result = await bridge.test(value);
       if (result.ok) {
         serverUrl.value = result.url;
-        setStatus(`Aas answered at ${result.url}.`, "ok");
+        setStatus(`Agents Assistance answered at ${result.url}.`, "ok");
       } else {
         setStatus(result.error ?? "Could not reach that address.", "error");
       }
@@ -362,7 +362,7 @@
         continueButton.focus();
       }
     } catch {
-      setStatus("Setup could not start. Quit Aas and try again.", "error");
+      setStatus("Setup could not start. Quit Agents Assistance and try again.", "error");
       setBusy(true);
     }
   }

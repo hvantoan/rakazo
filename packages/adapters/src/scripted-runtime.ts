@@ -490,7 +490,7 @@ code-b
         toolCalls: [
           {
             name: "destination.write",
-            args: { collection: "notes", title: "Aas result", body: prompt },
+            args: { collection: "notes", title: "Agents Assistance result", body: prompt },
           },
         ],
         complete: true,

@@ -39,7 +39,7 @@ services:
   # container with the project, which is how it finds the `web` screen proxy to
   # join each bot network.
   supervisor:
-    image: ${AAS_IMAGE:-ghcr.io/elie222/aas/app}:${AAS_IMAGE_TAG:-local}
+    image: ${AAS_IMAGE:-ghcr.io/hvantoan/agents-assistance/app}:${AAS_IMAGE_TAG:-local}
     build:
       context: ../..
       dockerfile: infra/compose/Dockerfile

@@ -176,7 +176,7 @@ export default function Layout() {
                       contentStyle: { backgroundColor: String(native.page) },
                     }}
                   >
-                    <Stack.Screen name="index" options={{ headerShown: false, title: "Aas" }} />
+                    <Stack.Screen name="index" options={{ headerShown: false, title: "Agents Assistance" }} />
                     <Stack.Screen name="sign-in" options={{ headerShown: false }} />
                     <Stack.Screen
                       name="(settings)"

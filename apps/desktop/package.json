@@ -1,6 +1,6 @@
 {
   "name": "@aas/desktop",
-  "productName": "Aas",
+  "productName": "Agents Assistance",
   "version": "0.2.0",
   "license": "Apache-2.0",
   "type": "module",
@@ -55,7 +55,7 @@
       "main": "dist/main.js"
     },
     "mac": {
-      "icon": "../../packages/ui-tokens/assets/Aas.icon",
+      "icon": "../../packages/ui-tokens/assets/agents-assistance.icon",
       "category": "public.app-category.productivity",
       "target": [
         "dmg",
@@ -80,8 +80,8 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "elie222",
-        "repo": "aas"
+        "owner": "hvantoan",
+        "repo": "agents-assistance"
       }
     ]
   }
