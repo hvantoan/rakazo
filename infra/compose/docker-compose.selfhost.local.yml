@@ -1,0 +1,12 @@
+# Local self-host run on a machine where 127.0.0.1:3100 and :5173 are already
+# taken. The API stays internal to the stack (docs say never publish :3100);
+# web keeps publishing loopback but on a free host port, proxying /api and
+# /rpc to the API internally.
+services:
+  api:
+    ports: !override []
+
+  web:
+    environment:
+      API_PROXY_TARGET: http://api:13100
+    ports: !override ["127.0.0.1:15273:5173"]
